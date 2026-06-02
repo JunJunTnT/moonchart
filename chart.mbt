@@ -99,6 +99,8 @@ pub fn render(opt : ChartOption) -> Result[String, String] {
       }
       _ => ()
     }
+    // Render error bars on top
+    svg = svg + renderErrorBars(layout, opt, i) + "\n"
   }
 
   svg = svg + svgClose()
