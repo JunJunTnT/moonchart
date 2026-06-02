@@ -1,50 +1,61 @@
-/// Demonstrate scale system: map data values to pixels and generate ticks.
+/// Demonstrate layout engine: compute plot area and show dimensions.
 fn main {
-  let scale = @moonchart.LinearScale::new(0.0, 100.0, 400.0)
-  let ticks = scale.ticks(5)
+  let data = [
+    @moonchart.DataPoint::new(0.0, 30.0),
+    @moonchart.DataPoint::new(1.0, 70.0),
+  ]
+  let series = @moonchart.Series::bar("Demo", data)
 
-  let mut svg = @moonchart.svgOpen(width=500.0, height=300.0, bg="white") + "\n"
+  let opt = @moonchart.ChartOption::new(
+    @moonchart.AxisOption::categories(["A", "B"]),
+    @moonchart.AxisOption::linearY(),
+    [series],
+  )
 
-  // Title
-  svg = svg + @moonchart.text(
-    x=250.0, y=30.0,
-    content="Scale System v0.3 — LinearScale 0-100 → 0-400px",
-    fontFamily="sans-serif", fontSize=14.0, fill="rgb(0,0,0)", textAnchor="middle",
-  ) + "\n"
+  match @moonchart.computeLayout(opt) {
+    Ok(layout) => {
+      let mut svg = @moonchart.svgOpen(width=opt.width, height=opt.height, bg="white") + "\n"
 
-  // Visualize ticks as lines
-  for i = 0; i < ticks.length(); i = i + 1 {
-    let (pixel, label) = ticks[i]
-    svg = svg + @moonchart.line(
-      x1=50.0 + pixel, y1=60.0,
-      x2=50.0 + pixel, y2=250.0,
-      stroke="rgb(200,200,200)", strokeWidth=1.0,
-    ) + "\n"
-    svg = svg + @moonchart.text(
-      x=50.0 + pixel, y=270.0,
-      content=label, fontFamily="sans-serif", fontSize=11.0, fill="rgb(60,60,60)", textAnchor="middle",
-    ) + "\n"
+      // Draw plot area boundary
+      svg = svg + @moonchart.rect(
+        x=layout.plot.left(), y=layout.plot.top(),
+        w=layout.plot.w, h=layout.plot.h,
+        fill="rgb(245,245,250)", stroke="rgb(0,122,184)", strokeWidth=2.0,
+      ) + "\n"
+
+      // Annotate dimensions
+      svg = svg + @moonchart.text(x=opt.width / 2.0, y=25.0,
+        content="Layout Engine v0.4 — Plot Area & Margins",
+        fontFamily="sans-serif", fontSize=14.0, fill="rgb(0,0,0)", textAnchor="middle") + "\n"
+
+      svg = svg + @moonchart.text(x=layout.plot.left() + layout.plot.w / 2.0, y=layout.plot.top() - 8.0,
+        content="plot = \{layout.plot.w.to_string()}×\{layout.plot.h.to_string()}",
+        fontFamily="sans-serif", fontSize=11.0, fill="rgb(0,122,184)", textAnchor="middle") + "\n"
+
+      // Show margins
+      svg = svg + @moonchart.text(x=layout.canvas.centerX(), y=layout.canvas.bottom() - 5.0,
+        content="canvas = \{layout.canvas.w.to_string()}×\{layout.canvas.h.to_string()}",
+        fontFamily="sans-serif", fontSize=10.0, fill="rgb(150,150,150)", textAnchor="middle") + "\n"
+
+      // Left margin indicator
+      svg = svg + @moonchart.line(x1=0.0, y1=layout.plot.top(), x2=layout.plot.left(), y2=layout.plot.top(), stroke="rgb(212,57,57)", strokeWidth=1.0) + "\n"
+      svg = svg + @moonchart.text(x=layout.plot.left() / 2.0, y=layout.plot.top() - 10.0,
+        content="margin", fontFamily="sans-serif", fontSize=9.0, fill="rgb(212,57,57)", textAnchor="middle") + "\n"
+
+      // Auto-infer label example
+      svg = svg + @moonchart.text(x=layout.plot.centerX(), y=layout.plot.centerY(),
+        content="Plot Area",
+        fontFamily="sans-serif", fontSize=24.0, fill="rgb(200,200,200)", textAnchor="middle") + "\n"
+
+      // Category positions
+      for i = 0; i < layout.xScale.count(); i = i + 1 {
+        let cx = layout.plot.left() + layout.xScale.map(i.to_double())
+        svg = svg + @moonchart.circle(cx=cx, cy=layout.plot.bottom(), r=4.0, fill="rgb(0,122,184)", stroke="none", strokeWidth=0.0) + "\n"
+      }
+
+      svg = svg + @moonchart.svgClose()
+      println(svg)
+    }
+    Err(msg) => println("Layout error: \{msg}")
   }
-
-  // Category scale example
-  let catScale = @moonchart.CategoryScale::new(["A", "B", "C", "D"], 400.0)
-  for i = 0; i < 4; i = i + 1 {
-    let cx = 50.0 + catScale.map(i.to_double())
-    svg = svg + @moonchart.circle(cx=cx, cy=150.0, r=15.0, fill="rgb(0,122,184)", stroke="none", strokeWidth=0.0) + "\n"
-    svg = svg + @moonchart.text(
-      x=cx, y=200.0,
-      content=catScale.label(i), fontFamily="sans-serif", fontSize=12.0, fill="rgb(0,0,0)", textAnchor="middle",
-    ) + "\n"
-  }
-
-  // Show a mark at 50% position
-  let mid = scale.map(50.0)
-  svg = svg + @moonchart.rect(x=50.0 + mid - 2.0, y=60.0, w=4.0, h=190.0, fill="rgb(212,57,57)", stroke="none", strokeWidth=0.0) + "\n"
-  svg = svg + @moonchart.text(
-    x=50.0 + mid, y=290.0,
-    content="50.0", fontFamily="sans-serif", fontSize=10.0, fill="rgb(212,57,57)", textAnchor="middle",
-  ) + "\n"
-
-  svg = svg + @moonchart.svgClose()
-  println(svg)
 }
