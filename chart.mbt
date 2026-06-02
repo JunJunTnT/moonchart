@@ -91,6 +91,12 @@ pub fn render(opt : ChartOption) -> Result[String, String] {
       Bar => {
         svg = svg + renderBars(layout, opt, i) + "\n"
       }
+      Line => {
+        svg = svg + renderLine(layout, opt, i) + "\n"
+      }
+      Scatter => {
+        svg = svg + renderScatter(layout, opt, i) + "\n"
+      }
       _ => ()
     }
   }

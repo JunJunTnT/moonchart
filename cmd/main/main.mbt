@@ -1,25 +1,36 @@
-/// Demonstrate bar chart: first complete data chart with bars.
+/// Demonstrate line + scatter charts with shapes and styles.
 fn main {
-  let ctrl = [
-    @moonchart.DataPoint::new(0.0, 45.0),
-    @moonchart.DataPoint::new(1.0, 62.0),
-    @moonchart.DataPoint::new(2.0, 78.0),
-    @moonchart.DataPoint::new(3.0, 91.0),
+  let lineData = [
+    @moonchart.DataPoint::new(0.0, 100.0),
+    @moonchart.DataPoint::new(1.0, 85.0),
+    @moonchart.DataPoint::new(2.0, 72.0),
+    @moonchart.DataPoint::new(3.0, 58.0),
+    @moonchart.DataPoint::new(4.0, 40.0),
+    @moonchart.DataPoint::new(5.0, 25.0),
   ]
-  let treat = [
-    @moonchart.DataPoint::new(0.0, 38.0),
-    @moonchart.DataPoint::new(1.0, 55.0),
-    @moonchart.DataPoint::new(2.0, 70.0),
-    @moonchart.DataPoint::new(3.0, 85.0),
+  let scatterData = [
+    @moonchart.DataPoint::new(1.2, 90.0),
+    @moonchart.DataPoint::new(2.3, 75.0),
+    @moonchart.DataPoint::new(3.1, 60.0),
+    @moonchart.DataPoint::new(4.5, 45.0),
+    @moonchart.DataPoint::new(5.0, 30.0),
   ]
 
   let result = @moonchart.Chart::new()
-    .title("Bar Chart — v0.6")
-    .xCategories(["Control", "Low Dose", "Med Dose", "High Dose"])
-    .yLabel("Viability (%)")
-    .yRange(0.0, 100.0)
-    .series(@moonchart.Series::bar("24h", ctrl))
-    .series(@moonchart.Series::bar("48h", treat))
+    .title("Line & Scatter — v0.7")
+    .xLabel("Time (hours)")
+    .yLabel("Concentration (ng/mL)")
+    .yRange(0.0, 110.0)
+    .series(
+      @moonchart.Series::line("Drug A", lineData)
+        .withColor(@moonchart.Color::rgb(0, 122, 184))
+        .withPointShape(@moonchart.Diamond)
+    )
+    .series(
+      @moonchart.Series::scatter("Observed", scatterData)
+        .withColor(@moonchart.Color::rgb(212, 57, 57))
+        .withPointSize(5.0)
+    )
     .toSvg()
 
   match result {
