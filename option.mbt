@@ -36,12 +36,12 @@ pub fn Color::toHex(self : Color) -> String {
   "#\{hexByte(self.r)}\{hexByte(self.g)}\{hexByte(self.b)}"
 }
 
-/// Format an Int in 0..255 as two uppercase hex digits.
+// Format an Int in 0..255 as two uppercase hex digits.
 fn hexByte(n : Int) -> String {
   hexDigit(n / 16) + hexDigit(n % 16)
 }
 
-/// Format a single hex digit 0..15 as uppercase hex char.
+// Format a single hex digit 0..15 as uppercase hex char.
 fn hexDigit(d : Int) -> String {
   if d < 10 {
     d.to_string()
@@ -187,8 +187,6 @@ pub enum AxisKind {
   Linear(Double, Double)
   /// Logarithmic scale. Parameters: (base, min, max).
   Log(Double, Double, Double)
-  /// Categorical axis with explicit category labels.
-  Categories(Array[String])
 }
 
 // ──── Axis option ────
@@ -198,6 +196,10 @@ pub struct AxisOption {
   kind : AxisKind
   /// Optional axis label text (e.g., "Time (days)").
   label : Option[String]
+  /// X-axis tick positions (data coordinates). Empty = auto-infer from data.
+  tickPositions : Array[Double]
+  /// X-axis tick labels. Must match tickPositions length if set. Empty = auto-generate.
+  tickLabels : Array[String]
   /// Whether to show tick marks. Default: true.
   showTick : Bool
   /// Desired number of ticks (None = auto). Default: None.
@@ -221,6 +223,8 @@ pub fn AxisOption::linearY() -> AxisOption {
   {
     kind: Linear(0.0, 100.0),
     label: None,
+    tickPositions: [],
+    tickLabels: [],
     showTick: true,
     tickCount: None,
     gridLine: false,
@@ -232,27 +236,13 @@ pub fn AxisOption::linearY() -> AxisOption {
   }
 }
 
-/// Create a default category X axis with labels.
-pub fn AxisOption::categories(labels : Array[String]) -> AxisOption {
+/// Create a default X axis (auto-infer ticks from data).
+pub fn AxisOption::defaultX() -> AxisOption {
   {
-    kind: Categories(labels),
+    kind: Linear(0.0, 1.0),
     label: None,
-    showTick: true,
-    tickCount: None,
-    gridLine: false,
-    tickFontSize: 11.0,
-    labelFontSize: 13.0,
-    tickColor: Color::rgb(60, 60, 60),
-    gridColor: Color::rgb(224, 224, 224),
-    gridWidth: 0.5,
-  }
-}
-
-/// Create a linear X axis [min, max].
-pub fn AxisOption::linearX(min : Double, max : Double) -> AxisOption {
-  {
-    kind: Linear(min, max),
-    label: None,
+    tickPositions: [],
+    tickLabels: [],
     showTick: true,
     tickCount: None,
     gridLine: false,
@@ -269,18 +259,21 @@ pub fn AxisOption::withLabel(self : AxisOption, label : String) -> AxisOption {
   { ..self, label: Some(label) }
 }
 
+// ──── Series ────
 // ──── Box group (for box plots) ────
 /// A group of raw data for box plot computation.
 pub(all) struct BoxGroup {
-  /// Group label (shown on X axis).
+  /// X-axis position (data coordinate).
+  x : Double
+  /// Group label (shown on X axis tick).
   label : String
   /// Raw data values.
   values : Array[Double]
 }
 
 /// Create a box plot data group.
-pub fn BoxGroup::new(label : String, values : Array[Double]) -> BoxGroup {
-  { label, values }
+pub fn BoxGroup::new(x : Double, label : String, values : Array[Double]) -> BoxGroup {
+  { x, label, values }
 }
 
 // ──── Series ────

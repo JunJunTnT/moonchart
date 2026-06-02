@@ -22,8 +22,8 @@ pub fn renderLegend(layout : Layout, opt : ChartOption) -> String {
   // Scale all sizes proportionally to font size
   let fs = font.size
   let markerSize = fs * 0.9
-  let markerGap = fs * 0.4
-  let itemSpacing = fs * 1.5
+  let markerGap = fs * 0.4       // gap between marker and text
+  let itemSpacing = fs * 1.5     // vertical gap between rows
   let paddingX = fs * 0.8
   let paddingY = fs * 0.4
 
@@ -32,6 +32,7 @@ pub fn renderLegend(layout : Layout, opt : ChartOption) -> String {
   // Calculate legend dimensions
   let mut maxTextWidth = 0.0
   for i = 0; i < opt.series.length(); i = i + 1 {
+    // Text width: each char ≈ 0.6 * fontSize (average for sans-serif)
     let textW = opt.series[i].name.length().to_double() * fs * 0.6
     if textW > maxTextWidth {
       maxTextWidth = textW
@@ -60,7 +61,7 @@ pub fn renderLegend(layout : Layout, opt : ChartOption) -> String {
     fill= "white", stroke= "#ccc", strokeWidth= 1.0,
   ) + "\n"
 
-  // Legend items
+  // Legend items — each row: [marker] [text], vertically centered
   for i = 0; i < opt.series.length(); i = i + 1 {
     let series = opt.series[i]
     let color = match series.color {
@@ -68,7 +69,10 @@ pub fn renderLegend(layout : Layout, opt : ChartOption) -> String {
       None => seriesColor(i)
     }
 
+    // Center Y of this entire row
     let rowCenterY = ly + paddingY + i.to_double() * itemSpacing + itemSpacing / 2.0
+
+    // Marker position (vertically centered in row)
     let markerX = lx + paddingX
     let markerCY = rowCenterY
     let markerTop = markerCY - markerSize / 2.0
@@ -104,6 +108,7 @@ pub fn renderLegend(layout : Layout, opt : ChartOption) -> String {
       }
     }
 
+    // Text label (vertically centered: baseline = rowCenterY + fs * 0.35)
     let labelX = markerX + markerSize + markerGap
     let textBaseline = rowCenterY + fs * 0.35
     svg = svg + text(

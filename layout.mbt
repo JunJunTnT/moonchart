@@ -45,7 +45,7 @@ pub struct Layout {
   canvas : Rect
   /// The plot area rectangle (inside margins, where data is drawn).
   plot : Rect
-  /// X-axis scale.
+  /// X-axis scale (category/band scale).
   xScale : CategoryScale
   /// Y-axis scale.
   yScale : LinearScale
@@ -64,8 +64,19 @@ pub fn computeLayout(opt : ChartOption) -> Result[Layout, String] {
   // Determine plot area with dynamic margins (user margin acts as minimum)
   let plotLeft = max(opt.margin.left, opt.yAxis.tickFontSize * 4.0 + opt.yAxis.labelFontSize + 10.0)
   let plotRight = opt.width - opt.margin.right
-  let plotTop = max(opt.margin.top, opt.titleFont.size + 10.0)
-  let plotBottom = opt.height - max(opt.margin.bottom, opt.xAxis.tickFontSize + opt.xAxis.labelFontSize + 16.0)
+  // Top margin: account for title
+  let titleMargin = match opt.title {
+    Some(_) => opt.titleFont.size + 16.0
+    None => 10.0
+  }
+  let plotTop = max(opt.margin.top, titleMargin)
+  // Bottom margin: account for x-axis ticks and label
+  let xTickSpace = opt.xAxis.tickFontSize + 8.0
+  let xLabelSpace = match opt.xAxis.label {
+    Some(_) => opt.xAxis.labelFontSize + 4.0
+    None => 0.0
+  }
+  let plotBottom = opt.height - max(opt.margin.bottom, xTickSpace + xLabelSpace + 10.0)
   let plotW = plotRight - plotLeft
   let plotH = plotBottom - plotTop
 
@@ -75,26 +86,11 @@ pub fn computeLayout(opt : ChartOption) -> Result[Layout, String] {
 
   let plot = Rect::{ x: plotLeft, y: plotTop, w: plotW, h: plotH }
 
-  // Build x scale from xAxis, with auto-inference from data
-  let xLabels = match opt.xAxis.kind {
-    Categories(labels) => {
-      if labels.length() > 0 {
-        labels
-      } else {
-        // Empty categories: auto-infer from data
-        autoInferXLabels(opt.series)
-      }
-    }
-    Linear(_, _) => autoInferXLabels(opt.series)
-    _ => autoInferXLabels(opt.series)
-  }
-  // Division-by-zero protection: ensure at least 1 category
-  let safeLabels = if xLabels.length() == 0 {
-    ["0"]
-  } else {
-    xLabels
-  }
-  let xScale = CategoryScale::new(safeLabels, plotW)
+  // Build x-axis tick positions and labels
+  let (xTicks, xLabels) = buildXTicks(opt)
+
+  // Build x scale
+  let xScale = CategoryScale::new(xTicks, xLabels, plotW)
 
   // Build y scale from yAxis
   let yScale = match opt.yAxis.kind {
@@ -150,42 +146,99 @@ pub fn computeLayout(opt : ChartOption) -> Result[Layout, String] {
   })
 }
 
-/// Auto-infer X axis labels from all series data.
-/// Scans all DataPoint.x values, finds the integer range, and generates string labels.
-fn autoInferXLabels(series : Array[Series]) -> Array[String] {
-  if series.length() == 0 {
-    return []
+/// Build X-axis tick positions and labels from options or auto-inference.
+fn buildXTicks(opt : ChartOption) -> (Array[Double], Array[String]) {
+  // Use explicit ticks if provided
+  if opt.xAxis.tickPositions.length() > 0 {
+    let positions = opt.xAxis.tickPositions
+    let labels = if opt.xAxis.tickLabels.length() == positions.length() {
+      opt.xAxis.tickLabels
+    } else {
+      // Generate default labels from positions
+      let gen : Array[String] = []
+      for i = 0; i < positions.length(); i = i + 1 {
+        gen.push(formatPosLabel(positions[i]))
+      }
+      gen
+    }
+    return (positions, labels)
   }
-  // Find min and max X across all series
-  let mut minX = 0.0
-  let mut maxX = 0.0
-  let mut first = true
+
+  // Auto-infer from series data
+  autoInferXTicks(opt.series)
+}
+
+/// Auto-infer X tick positions and labels from all series data.
+fn autoInferXTicks(series : Array[Series]) -> (Array[Double], Array[String]) {
+  if series.length() == 0 {
+    return ([], [])
+  }
+
+  // Collect all unique x values from series data and box groups
+  let xVals : Array[Double] = []
   for i = 0; i < series.length(); i = i + 1 {
+    // Data points
     for j = 0; j < series[i].data.length(); j = j + 1 {
       let x = series[i].data[j].x
-      if first {
-        minX = x
-        maxX = x
-        first = false
-      } else {
-        if x < minX { minX = x }
-        if x > maxX { maxX = x }
+      if !containsD(xVals, x) {
+        xVals.push(x)
+      }
+    }
+    // Box groups
+    for j = 0; j < series[i].boxGroups.length(); j = j + 1 {
+      let x = series[i].boxGroups[j].x
+      if !containsD(xVals, x) {
+        xVals.push(x)
       }
     }
   }
-  if first {
-    return ["0"]
+
+  if xVals.length() == 0 {
+    return ([0.0], ["0"])
   }
-  // Generate labels from minX to maxX (integer steps)
+
+  // Sort x values
+  sortDoubles(xVals)
+
+  // Generate labels from positions
   let labels : Array[String] = []
-  let start = minX.round()
-  let end = maxX.round()
-  let mut v = start
-  while v <= end {
-    labels.push(v.to_string())
-    v = v + 1.0
+  for i = 0; i < xVals.length(); i = i + 1 {
+    labels.push(formatPosLabel(xVals[i]))
   }
-  labels
+
+  (xVals, labels)
+}
+
+/// Check if array contains a double (approximate equality).
+fn containsD(arr : Array[Double], val : Double) -> Bool {
+  for i = 0; i < arr.length(); i = i + 1 {
+    if (arr[i] - val).abs() < 0.0000000001 {
+      return true
+    }
+  }
+  false
+}
+
+/// Sort an array of doubles (bubble sort for small arrays).
+fn sortDoubles(arr : Array[Double]) -> Unit {
+  for i = 0; i < arr.length(); i = i + 1 {
+    for j = i + 1; j < arr.length(); j = j + 1 {
+      if arr[i] > arr[j] {
+        let tmp : Double = arr[i]
+        arr[i] = arr[j]
+        arr[j] = tmp
+      }
+    }
+  }
+}
+
+/// Format a position value to a label string.
+fn formatPosLabel(value : Double) -> String {
+  if value == Double::round(value) {
+    Double::round(value).to_string()
+  } else {
+    value.to_string()
+  }
 }
 
 /// Max of two Double values (no Prelude max for Double).

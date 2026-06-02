@@ -5,13 +5,28 @@ pub struct Chart {
   option : ChartOption
 }
 
-/// Create a new chart.
+/// Create a new chart. Chart type is determined per-series via Series::bar/line/scatter.
 pub fn Chart::new() -> Chart {
-  let xAxis = AxisOption::categories([])
+  let xAxis = AxisOption::defaultX()
   let yAxis = AxisOption::linearY()
   let series : Array[Series] = []
   let option = ChartOption::new(xAxis, yAxis, series)
   { option, }
+}
+
+/// Deprecated: use Chart::new() instead. Chart type is per-series.
+pub fn Chart::bar() -> Chart {
+  Chart::new()
+}
+
+/// Deprecated: use Chart::new() instead. Chart type is per-series.
+pub fn Chart::line() -> Chart {
+  Chart::new()
+}
+
+/// Deprecated: use Chart::new() instead. Chart type is per-series.
+pub fn Chart::scatter() -> Chart {
+  Chart::new()
 }
 
 /// Set chart title.
@@ -46,9 +61,12 @@ pub fn Chart::yLabel(self : Chart, label : String) -> Chart {
   { ..self, option: { ..self.option, yAxis } }
 }
 
-/// Set X axis categories.
-pub fn Chart::xCategories(self : Chart, labels : Array[String]) -> Chart {
-  let xAxis = AxisOption::categories(labels)
+/// Set X axis tick positions and labels.
+/// `positions` — data coordinate for each tick.
+/// `labels` — display label for each tick (must match positions length).
+/// When positions is empty, ticks are auto-inferred from data.
+pub fn Chart::xTicks(self : Chart, positions : Array[Double], labels : Array[String]) -> Chart {
+  let xAxis = { ..self.option.xAxis, tickPositions: positions, tickLabels: labels }
   { ..self, option: { ..self.option, xAxis } }
 }
 
@@ -72,24 +90,24 @@ pub fn Chart::labelFontSize(self : Chart, size : Double) -> Chart {
   { ..self, option: { ..self.option, xAxis, yAxis } }
 }
 
-/// Enable Y-axis grid lines.
+/// Enable Y-axis grid lines with default color.
 pub fn Chart::yGrid(self : Chart, show : Bool) -> Chart {
   let yAxis = { ..self.option.yAxis, gridLine: show }
   { ..self, option: { ..self.option, yAxis } }
 }
 
-/// Enable X-axis grid lines.
+/// Enable X-axis grid lines with default color.
 pub fn Chart::xGrid(self : Chart, show : Bool) -> Chart {
   let xAxis = { ..self.option.xAxis, gridLine: show }
   { ..self, option: { ..self.option, xAxis } }
 }
 
-/// Set bar width ratio (0.0~1.0).
+/// Set bar width ratio (0.0~1.0). Fraction of band width occupied by bars. Default: 0.7.
 pub fn Chart::barWidthRatio(self : Chart, ratio : Double) -> Chart {
   { ..self, option: { ..self.option, barWidthRatio: ratio } }
 }
 
-/// Set bar gap ratio (0.0~1.0).
+/// Set bar gap ratio (0.0~1.0). Gap between bars in a group, as fraction of bar width. Default: 0.0.
 pub fn Chart::barGap(self : Chart, gap : Double) -> Chart {
   { ..self, option: { ..self.option, barGap: gap } }
 }
@@ -126,17 +144,29 @@ pub fn Chart::margin(self : Chart, top : Double, right : Double, bottom : Double
   { ..self, option: { ..self.option, margin: { top, right, bottom, left } } }
 }
 
+/// Set chart background color.
+pub fn Chart::background(self : Chart, color : Color) -> Chart {
+  { ..self, option: { ..self.option, background: color } }
+}
+
+/// Set font family for all text elements.
+pub fn Chart::fontFamily(self : Chart, family : String) -> Chart {
+  { ..self, option: { ..self.option, fontFamily: family } }
+}
+
 /// Export the internal ChartOption (escape hatch for advanced users).
 pub fn Chart::toOption(self : Chart) -> ChartOption {
   self.option
 }
 
 /// Render the chart to an SVG string.
+/// Returns Result with the SVG string on success, error message on failure.
 pub fn Chart::toSvg(self : Chart) -> Result[String, String] {
   render(self.option)
 }
 
 /// Render the chart and save to a file (native target only).
+/// Returns Ok(()) on success, Err(message) on failure.
 pub fn Chart::save(self : Chart, filename : String) -> Result[Unit, String] {
   match self.toSvg() {
     Ok(svg) => saveSvg(filename, svg)

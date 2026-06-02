@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoonChart - WASM Demo</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex; height: 100vh; overflow: hidden;
+  background: #1e1e2e; color: #cdd6f4;
+}
+/* ── Sidebar ── */
+#sidebar { width: 420px; min-width: 420px; overflow-y: auto; padding: 16px;
+  background: #181825; border-right: 1px solid #313244; display: flex; flex-direction: column; gap: 12px; }
+#sidebar h2 { font-size: 16px; margin-bottom: 4px; color: #89b4fa; }
+#sidebar label { font-size: 11px; color: #a6adc8; text-transform: uppercase; letter-spacing: .5px; }
+#sidebar input, #sidebar select, #sidebar textarea {
+  width: 100%; padding: 6px 8px; border: 1px solid #45475a;
+  border-radius: 6px; font-size: 13px;
+  background: #1e1e2e; color: #cdd6f4;
+}
+#sidebar input[type="color"] { width: 36px; height: 28px; padding: 2px; cursor: pointer; }
+#sidebar input[type="range"] { width: 100%; margin: 0; }
+#sidebar button {
+  padding: 6px 12px; border: none; border-radius: 6px; cursor: pointer;
+  font-size: 12px; font-weight: 600; transition: all .15s;
+}
+.btn-primary { background: #89b4fa; color: #1e1e2e; }
+.btn-primary:hover { background: #74c7ec; }
+.btn-danger { background: #f38ba8; color: #1e1e2e; }
+.btn-danger:hover { background: #eba0ac; }
+.btn-sm { padding: 4px 8px; font-size: 11px; }
+.row { display: flex; gap: 8px; align-items: center; }
+.row > * { flex: 1; }
+.tabs { display: flex; gap: 2px; }
+.tab {
+  flex: 1; padding: 8px 4px; text-align: center; font-size: 11px; font-weight: 600;
+  border: none; background: #313244; color: #a6adc8; cursor: pointer; border-radius: 6px 6px 0 0;
+  transition: all .15s;
+}
+.tab.active { background: #89b4fa; color: #1e1e2e; }
+.tab:hover:not(.active) { background: #45475a; }
+.series-card {
+  background: #313244; border-radius: 8px; padding: 10px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.series-card h4 { font-size: 12px; color: #f5c2e7; }
+.series-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+/* ── Main area ── */
+#main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+#output {
+  flex: 1; overflow: auto; display: flex; align-items: center; justify-content: center;
+  padding: 16px; background: #fff;
+}
+#output svg { max-width: 100%; height: auto; }
+#status { font-size: 12px; color: #a6e3a1; padding: 4px 0; }
+#status.error { color: #f38ba8; }
+summary { cursor: pointer; }
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+  <h2>📊 MoonChart WASM Demo</h2>
+  <div id="status">Loading WASM…</div>
+
+  <!-- Chart Type Tabs -->
+  <div>
+    <label>Chart Type (click to load preset)</label>
+    <div class="tabs" id="chartTabs">
+      <button class="tab active" data-type="bar">Bar</button>
+      <button class="tab" data-type="line">Line</button>
+      <button class="tab" data-type="scatter">Scatter</button>
+      <button class="tab" data-type="boxplot">BoxPlot</button>
+    </div>
+  </div>
+
+  <!-- General Options -->
+  <details open>
+    <summary style="font-weight:600; color:#89b4fa;">Chart Options</summary>
+    <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px;">
+      <div class="row">
+        <div><label>Width</label><input type="number" id="width" value="600" min="200" max="2000" step="10"></div>
+        <div><label>Height</label><input type="number" id="height" value="400" min="200" max="2000" step="10"></div>
+      </div>
+      <div><label>Title</label><input type="text" id="title" value="MoonChart Demo" placeholder="Chart title"></div>
+      <div class="row">
+        <div><label>X Label</label><input type="text" id="xLabel" placeholder="X Axis"></div>
+        <div><label>Y Label</label><input type="text" id="yLabel" placeholder="Y Axis"></div>
+      </div>
+      <div class="row">
+        <div><label>Y Min</label><input type="number" id="yMin" value="0" step="1"></div>
+        <div><label>Y Max</label><input type="number" id="yMax" value="100" step="1"></div>
+      </div>
+      <div><label>X Tick Positions (comma-sep)</label><input type="text" id="xTickPositions" value="0,1,2,3" placeholder="Leave empty for auto"></div>
+      <div><label>X Tick Labels (comma-sep)</label><input type="text" id="xTickLabels" value="A,B,C,D" placeholder="Same as positions if empty"></div>
+      <div class="row">
+        <div><label>Background</label><input type="color" id="background" value="#ffffff"></div>
+        <div><label>Font Family</label><select id="fontFamily">
+          <option value="sans-serif">Sans-Serif</option><option value="serif">Serif</option><option value="monospace">Monospace</option>
+        </select></div>
+      </div>
+      <div class="row">
+        <div><label>Tick Size</label><input type="number" id="tickFontSize" value="11" min="6" max="24"></div>
+        <div></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- Legend & Grid -->
+  <details open>
+    <summary style="font-weight:600; color:#89b4fa;">Legend & Grid</summary>
+    <div style="display:flex; flex-direction:column; gap:6px; margin-top:8px;">
+      <div class="row">
+        <div><label>Show Legend</label><select id="showLegend"><option value="true">Yes</option><option value="false">No</option></select></div>
+        <div><label>Position</label><select id="legendPosition">
+          <option value="topRight">Top Right</option><option value="topLeft">Top Left</option>
+          <option value="topCenter">Top Center</option><option value="bottomRight">Bottom Right</option>
+          <option value="bottomLeft">Bottom Left</option><option value="bottomCenter">Bottom Center</option>
+          <option value="left">Left</option><option value="right">Right</option>
+        </select></div>
+      </div>
+      <div class="row">
+        <div><label>Y Grid</label><input type="checkbox" id="showYGrid"></div>
+        <div><label>X Grid</label><input type="checkbox" id="showXGrid"></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- Series Editor -->
+  <details open id="seriesSection">
+    <summary style="font-weight:600; color:#89b4fa;">
+      Series (<span id="seriesCount">1</span>)
+    </summary>
+    <div id="seriesList" style="display:flex; flex-direction:column; gap:8px; margin-top:8px;"></div>
+    <div id="sharedBarProps" style="display:none; margin-top:10px; padding:8px 10px; background:#252536; border-radius:8px;">
+      <label style="color:#f5c2e7; margin-bottom:4px;">📐 Bar / Box Spacing (shared)</label>
+      <div><label>Bar Width Ratio <span id="barWidthVal">0.7</span></label><input type="range" id="barWidthRatio" value="0.7" min="0.1" max="1" step="0.05"></div>
+      <div><label>Bar Gap <span id="barGapVal">0</span></label><input type="range" id="barGap" value="0.0" min="0" max="1" step="0.05"></div>
+    </div>
+    <button class="btn-primary" style="margin-top:8px; width:100%;" onclick="addSeries()">+ Add Series</button>
+  </details>
+
+  <button class="btn-primary" style="padding:10px; font-size:14px; width:100%;" onclick="renderChart()">
+    🔄 Render Chart
+  </button>
+  <div style="text-align:center; font-size:11px; color:#585b70; margin-top:4px;">Powered by MoonBit · WASM</div>
+</div>
+
+<div id="main">
+  <div id="output">
+    <div style="color:#1e1e2e; font-family:monospace;">Select a chart type above or adjust settings and render</div>
+  </div>
+</div>
+
+<script>
+// ════ WASM Loading ════
+let wasmExports = null;
+
+async function loadWasm() {
+  const el = document.getElementById('status');
+  try {
+    const m = await WebAssembly.instantiateStreaming(
+      fetch('moonchart.wasm'), {}, { builtins: ['js-string'], importedStringConstants: '_' }
+    );
+    wasmExports = m.instance.exports;
+    el.textContent = '✓ WASM loaded'; el.className = '';
+    renderChart();
+  } catch (e) {
+    el.textContent = '✗ WASM load failed: ' + e.message; el.className = 'error';
+    console.error(e);
+  }
+}
+
+// ════ Series Management ════
+let currentChartType = 'bar';
+let seriesColors = ['#007AB8', '#F48634', '#38A44A', '#D53939', '#946ABD', '#735C4B'];
+let nextSeriesId = 2;
+
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const type = tab.dataset.type;
+    loadPreset(type);
+  });
+});
+
+function createSeriesCard(id, name, color, chartType, data) {
+  const card = document.createElement('div');
+  card.className = 'series-card'; card.id = 'series-' + id;
+  const isBox = chartType === 'boxplot';
+  const dataStr = data || (isBox ? '' : '[[0,45],[1,62],[2,78],[3,91]]');
+  card.innerHTML = `
+    <div class="row" style="align-items:center;">
+      <h4 style="flex:1;">Series ${id}</h4>
+      <button class="btn-danger btn-sm" onclick="removeSeries(${id})" ${id===1?'disabled':''}>✕</button>
+    </div>
+    <div class="row">
+      <div><label>Name</label><input type="text" class="s-name" value="${name}"></div>
+      <div><label>Type</label><select class="s-chartType" onchange="onSeriesTypeChange(${id})">
+        <option value="bar" ${chartType==='bar'?'selected':''}>Bar</option>
+        <option value="line" ${chartType==='line'?'selected':''}>Line</option>
+        <option value="scatter" ${chartType==='scatter'?'selected':''}>Scatter</option>
+        <option value="boxplot" ${chartType==='boxplot'?'selected':''}>BoxPlot</option>
+      </select></div>
+    </div>
+    <div class="row">
+      <div><label>Color</label><input type="color" class="s-color" value="${color}"></div>
+    </div>
+    <!-- Line-only properties -->
+    <div class="s-prop-line series-grid prop-group" style="display:${chartType==='line'?'grid':'none'}">
+      <div><label>Line Width</label><input type="number" class="s-lineWidth" value="2" min="0.5" max="10" step="0.5"></div>
+      <div><label>Line Style</label><select class="s-lineStyle">
+        <option value="solid">Solid</option><option value="dashed">Dashed</option><option value="dotted">Dotted</option><option value="dashDot">DashDot</option></select></div>
+    </div>
+    <!-- Line + Scatter properties -->
+    <div class="s-prop-point series-grid prop-group" style="display:${chartType==='line'||chartType==='scatter'?'grid':'none'}">
+      <div><label>Point Size</label><input type="number" class="s-pointSize" value="4" min="0" max="20" step="0.5"></div>
+      <div><label>Point Shape</label><select class="s-pointShape">
+        <option value="circle">Circle</option><option value="square">Square</option><option value="triangle">Triangle</option><option value="diamond">Diamond</option><option value="cross">Cross</option></select></div>
+    </div>
+    <!-- BoxPlot-only properties -->
+    <div class="s-prop-box prop-group" style="display:${chartType==='boxplot'?'block':'none'}">
+      <div><label>Show Outliers</label><select class="s-showOutliers"><option value="true" selected>Show</option><option value="false">Hide</option></select></div>
+    </div>
+    <div><label>Data ${isBox ? '(BoxPlot JSON)' : '([[x,y,err?],...])'}</label>
+      <textarea class="s-data" style="height:${isBox?'70':'50'}px;font-family:monospace;font-size:11px;" spellcheck="false">${dataStr}</textarea></div>
+  `;
+  return card;
+}
+
+function onSeriesTypeChange(id) {
+  const card = document.getElementById('series-' + id);
+  if (!card) return;
+  const st = card.querySelector('.s-chartType').value;
+  // Line-only properties (Line Width, Line Style)
+  const lineDiv = card.querySelector('.s-prop-line');
+  if (lineDiv) lineDiv.style.display = st === 'line' ? 'grid' : 'none';
+  // Line + Scatter properties (Point Size, Point Shape)
+  const pointDiv = card.querySelector('.s-prop-point');
+  if (pointDiv) pointDiv.style.display = (st === 'line' || st === 'scatter') ? 'grid' : 'none';
+  // BoxPlot-only properties (Show Outliers)
+  const boxDiv = card.querySelector('.s-prop-box');
+  if (boxDiv) boxDiv.style.display = st === 'boxplot' ? 'block' : 'none';
+  // Update data label hint
+  const dataLabel = card.querySelector('label:last-of-type');
+  if (dataLabel) dataLabel.textContent = 'Data ' + (st === 'boxplot' ? '(BoxPlot JSON)' : '([[x,y,err?],...])');
+  updateSharedBarProps();
+}
+
+function addSeries() {
+  const card = createSeriesCard(nextSeriesId, 'Series ' + nextSeriesId,
+    seriesColors[(nextSeriesId-1)%seriesColors.length], currentChartType, null);
+  document.getElementById('seriesList').appendChild(card);
+  nextSeriesId++;
+  document.getElementById('seriesCount').textContent = nextSeriesId - 1;
+  updateSharedBarProps();
+}
+
+function removeSeries(id) {
+  const card = document.getElementById('series-' + id);
+  if (card) card.remove();
+  updateSeriesCount();
+  updateSharedBarProps();
+}
+
+function updateSeriesCount() {
+  document.getElementById('seriesCount').textContent =
+    document.querySelectorAll('.series-card').length;
+}
+
+// ════ Shared Bar Props ════
+document.getElementById('barWidthRatio').addEventListener('input', function() {
+  document.getElementById('barWidthVal').textContent = this.value;
+});
+document.getElementById('barGap').addEventListener('input', function() {
+  document.getElementById('barGapVal').textContent = this.value;
+});
+
+function updateSharedBarProps() {
+  const shared = document.getElementById('sharedBarProps');
+  if (!shared) return;
+  let hasBarBox = false;
+  document.querySelectorAll('.s-chartType').forEach(sel => {
+    const v = sel.value;
+    if (v === 'bar' || v === 'boxplot') hasBarBox = true;
+  });
+  shared.style.display = hasBarBox ? '' : 'none';
+}
+
+// ════ Build Config & Render ════
+function buildConfig() {
+  const get = id => document.getElementById(id);
+  const gv = id => get(id).value;
+  const gn = id => Number(get(id).value);
+  const config = {
+    chartType: currentChartType,
+    width: gn('width'), height: gn('height'),
+    title: gv('title') || undefined,
+    xLabel: gv('xLabel') || undefined,
+    yLabel: gv('yLabel') || undefined,
+    yMin: gn('yMin'), yMax: gn('yMax'),
+    xTickPositions: (gv('xTickPositions').trim() ? gv('xTickPositions').split(',').map(s => Number(s.trim())).filter(n => !isNaN(n)) : []),
+    xTickLabels: gv('xTickLabels').split(',').map(s => s.trim()).filter(s => s),
+    background: gv('background'),
+    fontFamily: gv('fontFamily'),
+    showLegend: gv('showLegend') === 'true',
+    legendPosition: gv('legendPosition'),
+    showYGrid: get('showYGrid').checked,
+    showXGrid: get('showXGrid').checked,
+    barWidthRatio: gn('barWidthRatio'),
+    barGap: gn('barGap'),
+    tickFontSize: gn('tickFontSize'),
+    series: []
+  };
+
+  document.querySelectorAll('.series-card').forEach(card => {
+    const q = s => card.querySelector(s).value;
+    const qn = s => Number(card.querySelector(s).value);
+    const sType = q('.s-chartType');
+    let data = [], boxData = [];
+    try {
+      const raw = card.querySelector('.s-data').value.trim();
+      if (raw) {
+        if (sType === 'boxplot') {
+          const p = JSON.parse(raw);
+          boxData = Array.isArray(p) ? p : [p];
+        } else {
+          data = JSON.parse(raw);
+        }
+      }
+    } catch (e) { /* invalid json, use empty */ }
+
+    config.series.push({
+      name: q('.s-name'), chartType: sType,
+      color: q('.s-color'),
+      lineWidth: qn('.s-lineWidth'), pointSize: qn('.s-pointSize'),
+      lineStyle: q('.s-lineStyle'), pointShape: q('.s-pointShape'),
+      showOutliers: (card.querySelector('.s-showOutliers')?.value || 'true') === 'true',
+      data, boxData
+    });
+  });
+  return config;
+}
+
+function renderChart() {
+  const statusEl = document.getElementById('status'), outputEl = document.getElementById('output');
+  if (!wasmExports) {
+    statusEl.textContent = '⏳ WASM not ready, retrying…'; statusEl.className = 'error';
+    loadWasm(); return;
+  }
+  try {
+    const config = buildConfig();
+    const result = wasmExports.render_chart(JSON.stringify(config));
+    if (result.startsWith('Error:')) {
+      statusEl.textContent = '✗ ' + result; statusEl.className = 'error';
+      outputEl.innerHTML = `<div style="color:#d20f39;font-family:monospace;white-space:pre-wrap;padding:20px;">${result}</div>`;
+      return;
+    }
+    outputEl.innerHTML = result;
+    statusEl.textContent = '✓ Chart rendered'; statusEl.className = '';
+  } catch (e) {
+    statusEl.textContent = '✗ JS Error: ' + e.message; statusEl.className = 'error';
+    console.error(e);
+  }
+}
+
+// ════ Presets ════
+function loadPreset(type) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.tab[data-type="${type}"]`).classList.add('active');
+  currentChartType = type;
+  document.getElementById('seriesList').innerHTML = ''; nextSeriesId = 1;
+  const set = (id, v) => { const e = document.getElementById(id); if (e) e.value = v; };
+
+  const presets = {
+    bar: () => {
+      set('title','Cell Viability After Treatment'); set('xLabel',''); set('yLabel','Viability (%)');
+      set('yMin','0'); set('yMax','100'); set('xTickPositions','0,1,2,3'); set('xTickLabels','Control, Low Dose, Med Dose, High Dose');
+      set('showLegend','true');
+      const list = document.getElementById('seriesList');
+      list.appendChild(createSeriesCard(nextSeriesId++,'24h','#007AB8','bar','[[0,45,3],[1,62,2.5],[2,78,4],[3,91,2]]'));
+      list.appendChild(createSeriesCard(nextSeriesId++,'48h','#F48634','bar','[[0,38,2],[1,55,3],[2,70,3.5],[3,85,2.5]]'));
+      document.getElementById('seriesCount').textContent = '2';
+    },
+    line: () => {
+      set('title','Drug Concentration Over Time'); set('xLabel','Time (hours)'); set('yLabel','Concentration (ng/mL)');
+      set('yMin','0'); set('yMax','110'); set('xTickPositions','0,1,2,3,4,5'); set('xTickLabels','0,1,2,3,4,5');
+      set('showLegend','true');
+      const list = document.getElementById('seriesList');
+      list.appendChild(createSeriesCard(nextSeriesId++,'Drug A','#007AB8','line','[[0,100],[1,85],[2,72],[3,58],[4,40],[5,25]]'));
+      list.appendChild(createSeriesCard(nextSeriesId++,'Drug B','#D53939','line','[[0,95],[1,80],[2,65],[3,50],[4,35],[5,18]]'));
+      document.getElementById('seriesCount').textContent = '2';
+    },
+    scatter: () => {
+      set('title','Correlation Analysis'); set('xLabel','Variable X'); set('yLabel','Variable Y');
+      set('yMin','0'); set('yMax','20'); set('xTickPositions',''); set('xTickLabels',''); set('showLegend','true');
+      const list = document.getElementById('seriesList');
+      list.appendChild(createSeriesCard(nextSeriesId++,'Group A','#007AB8','scatter','[[1.2,2.1],[2.3,3.8],[3.1,5.2],[4.5,7],[5,9.3],[6.2,11.5],[7.1,14],[8.3,16.2]]'));
+      list.appendChild(createSeriesCard(nextSeriesId++,'Group B','#D53939','scatter','[[1,3],[2,5.2],[3.3,6.8],[4,8.5],[5.5,10],[6.8,13],[7.5,15.5],[8,17.8]]'));
+      document.getElementById('seriesCount').textContent = '2';
+    },
+    boxplot: () => {
+      set('title','Box Plot: Gene Expression'); set('xLabel',''); set('yLabel','Expression Level');
+      set('yMin','0'); set('yMax','5'); set('xTickPositions','0,1'); set('xTickLabels','Control, Treatment');
+      set('showLegend','true');
+      const list = document.getElementById('seriesList');
+      list.appendChild(createSeriesCard(nextSeriesId++,'mRNA','#007AB8','boxplot','[{"x":0,"label":"Control","values":[1.2,2.1,3.4,2.8,1.9,2.5,3,2.3,1.8,2.7,3.2,2,2.9,1.5,3.8,2.6,3.1,1.7,4.2,2.4,6.5]},{"x":1,"label":"Treatment","values":[0.8,1.5,2.9,2.1,1.3,1.9,2.4,1.7,3.5,2,2.8,1.6,2.2,1.1,3,1.8,2.5,0.9,3.3,1.4]}]'));
+      document.getElementById('seriesCount').textContent = '1';
+    }
+  };
+  presets[type]();
+  updateSharedBarProps();
+  renderChart();
+}
+
+// ════ Init ════
+document.getElementById('seriesList').appendChild(
+  createSeriesCard(1, 'Series 1', '#007AB8', 'bar', '[[0,45,3],[1,62,2.5],[2,78,4],[3,91,2]]'));
+document.getElementById('seriesCount').textContent = '1';
+updateSharedBarProps();
+loadWasm();
+</script>
+</body>
+</html>

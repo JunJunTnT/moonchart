@@ -11,6 +11,7 @@ fn tickFontFrom(axis : AxisOption, fontFamily : String) -> Font {
   }
 }
 
+// Build a label font from axis option settings using the given font family.
 fn labelFontFrom(axis : AxisOption, fontFamily : String) -> Font {
   {
     family: fontFamily,
@@ -21,18 +22,7 @@ fn labelFontFrom(axis : AxisOption, fontFamily : String) -> Font {
   }
 }
 
-/// Generate a rotated SVG text element (for Y axis labels).
-fn rotatedText(
-  x~ : Double,
-  y~ : Double,
-  content~ : String,
-  font~ : Font
-) -> String {
-  let escaped = xmlEscape(content)
-  "<text x='\{x}' y='\{y}' \{font.svgAttrs()} text-anchor='middle' transform='rotate(-90,\{x},\{y})'>\{escaped}</text>"
-}
-
-/// Render the Y-axis (left side of plot area).
+/// Render the Y-axis (left side of plot area). `layout` provides plot and scale geometry; `opt` provides axis styling.
 pub fn renderYAxis(layout : Layout, opt : ChartOption) -> String {
   let plot = layout.plot
   let yScale = layout.yScale
@@ -89,7 +79,7 @@ pub fn renderYAxis(layout : Layout, opt : ChartOption) -> String {
     Some(label) => {
       let titleFontVal = labelFontFrom(axis, opt.fontFamily)
       let centerY = plot.centerY()
-      let xPos = plot.left() / 2.0
+      let xPos = plot.left() / 2.0  // center of left margin
       svg = svg + rotatedText(
         x= xPos, y= centerY,
         content= label, font= titleFontVal,
@@ -101,7 +91,7 @@ pub fn renderYAxis(layout : Layout, opt : ChartOption) -> String {
   svg
 }
 
-/// Render the X-axis (bottom of plot area).
+/// Render the X-axis (bottom of plot area). `layout` provides plot and scale geometry; `opt` provides axis styling.
 pub fn renderXAxis(layout : Layout, opt : ChartOption) -> String {
   let plot = layout.plot
   let xScale = layout.xScale
@@ -171,7 +161,7 @@ pub fn renderXAxis(layout : Layout, opt : ChartOption) -> String {
   svg
 }
 
-/// Render the chart title (centered at top).
+/// Render the chart title (centered at top). `opt` provides the title text and chart dimensions.
 pub fn renderTitle(opt : ChartOption) -> String {
   match opt.title {
     Some(title) => {

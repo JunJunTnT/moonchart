@@ -59,6 +59,17 @@ pub fn text(
   "<text x='\{x}' y='\{y}' \{font.svgAttrs()} text-anchor='\{textAnchor}'>\{escaped}</text>"
 }
 
+/// Generate a rotated SVG text element (for Y axis labels).
+pub fn rotatedText(
+  x~ : Double,
+  y~ : Double,
+  content~ : String,
+  font~ : Font
+) -> String {
+  let escaped = xmlEscape(content)
+  "<text x='\{x}' y='\{y}' \{font.svgAttrs()} text-anchor='middle' transform='rotate(-90,\{x},\{y})'>\{escaped}</text>"
+}
+
 /// Generate the SVG document opening.
 pub fn svgOpen(width~ : Double, height~ : Double, bg~ : String) -> String {
   "<svg xmlns='http://www.w3.org/2000/svg' width='\{width}' height='\{height}' viewBox='0 0 \{width} \{height}'>\n  <rect x='0' y='0' width='\{width}' height='\{height}' fill='\{bg}' />"
@@ -67,6 +78,34 @@ pub fn svgOpen(width~ : Double, height~ : Double, bg~ : String) -> String {
 /// Generate the SVG document closing.
 pub fn svgClose() -> String {
   "</svg>"
+}
+
+/// Generate an SVG polyline element for line charts.
+pub fn polyline(
+  points~ : String,
+  stroke~ : String,
+  strokeWidth~ : Double,
+  fill~ : String
+) -> String {
+  "<polyline points='\{points}' stroke='\{stroke}' stroke-width='\{strokeWidth}' fill='\{fill}' stroke-linejoin='round' stroke-linecap='round' />"
+}
+
+/// Format a sequence of (x, y) points into a polyline points string.
+pub fn formatPoints(pts : Array[(Double, Double)]) -> String {
+  let parts : Array[String] = []
+  for i = 0; i < pts.length(); i = i + 1 {
+    let (px, py) = pts[i]
+    parts.push("\{px},\{py}")
+  }
+  let mut result = ""
+  for i = 0; i < parts.length(); i = i + 1 {
+    if i == 0 {
+      result = parts[i]
+    } else {
+      result = result + " " + parts[i]
+    }
+  }
+  result
 }
 
 /// Save an SVG string to a file in the current directory.

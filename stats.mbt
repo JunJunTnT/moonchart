@@ -1,6 +1,6 @@
 // Box plot statistics: computes five-number summary from raw data.
 
-/// Computed statistics for a single box plot group.
+/// Statistics for a single box plot: min, Q1, median, Q3, max, IQR, fences, whiskers, and outliers.
 pub(all) struct BoxStats {
   min : Double
   q1 : Double
@@ -15,7 +15,7 @@ pub(all) struct BoxStats {
   outliers : Array[Double]
 }
 
-/// Compute box plot statistics from raw values.
+/// Compute box plot statistics (five-number summary, IQR, fences, whiskers, outliers) from an array of values.
 pub fn computeBoxStats(values : Array[Double]) -> BoxStats {
   let sorted = values.copy()
   // Sort ascending
@@ -80,7 +80,7 @@ pub fn computeBoxStats(values : Array[Double]) -> BoxStats {
   }
 }
 
-/// Compute a percentile using linear interpolation.
+// Compute a percentile using linear interpolation between neighboring sorted elements.
 fn percentile(sorted : Array[Double], p : Double) -> Double {
   let n = sorted.length()
   let idx = p * (n.to_double() - 1.0)

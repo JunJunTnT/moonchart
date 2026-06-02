@@ -1,6 +1,6 @@
 // Box plot rendering: box from Q1-Q3, median line, whiskers, optional outliers.
 
-/// Render a box plot series into SVG.
+/// Render a box plot series (Q1/Q3 box, median line, whiskers with caps, and outliers) into SVG. Parameters: layout - chart layout config, opt - full chart options, seriesIndex - index of the series to render.
 pub fn renderBoxplot(layout : Layout, opt : ChartOption, seriesIndex : Int) -> String {
   let series = opt.series[seriesIndex]
   let color = match series.color {
@@ -19,7 +19,7 @@ pub fn renderBoxplot(layout : Layout, opt : ChartOption, seriesIndex : Int) -> S
     return ""
   }
 
-  // Box width
+  // Box width: 50% of band width
   let boxWidth = layout.barWidth
   let halfBox = boxWidth / 2.0
   let whiskerLineWidth = 1.0
@@ -31,7 +31,8 @@ pub fn renderBoxplot(layout : Layout, opt : ChartOption, seriesIndex : Int) -> S
       continue
     }
     let stats = computeBoxStats(group.values)
-    let cx = plot.left() + layout.xScale.map(i.to_double()) + layout.dodgeOffsets[seriesIndex]
+    // Use bandCenter for box positioning (bars/boxes align to band centers)
+    let cx = plot.left() + layout.xScale.bandCenter(group.x) + layout.dodgeOffsets[seriesIndex]
 
     // Map data values to Y pixels
     let yQ1 = plot.bottom() - layout.yScale.map(stats.q1)
@@ -40,8 +41,8 @@ pub fn renderBoxplot(layout : Layout, opt : ChartOption, seriesIndex : Int) -> S
     let yWhiskerLow = plot.bottom() - layout.yScale.map(stats.whiskerLow)
     let yWhiskerHigh = plot.bottom() - layout.yScale.map(stats.whiskerHigh)
 
-    let boxY = yQ3
-    let boxH = yQ1 - yQ3
+    let boxY = yQ3  // top of box (Q3 has lower pixel value = higher on screen)
+    let boxH = yQ1 - yQ3  // box height
 
     // Box rect (Q1 to Q3)
     svg = svg + rect(

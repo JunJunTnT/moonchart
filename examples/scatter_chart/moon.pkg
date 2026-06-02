@@ -1,0 +1,7 @@
+import {
+  "JunJunTvT/moonchart" @moonchart,
+}
+
+options(
+  "is-main": true,
+)
