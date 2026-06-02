@@ -24,16 +24,14 @@ pub fn Chart::size(self : Chart, w : Double, h : Double) -> Chart {
   { ..self, option: { ..self.option, width: w, height: h } }
 }
 
-/// Set X axis categories.
-pub fn Chart::xCategories(self : Chart, labels : Array[String]) -> Chart {
-  let xAxis = AxisOption::categories(labels)
-  { ..self, option: { ..self.option, xAxis } }
+/// Set width only.
+pub fn Chart::width(self : Chart, w : Double) -> Chart {
+  { ..self, option: { ..self.option, width: w } }
 }
 
-/// Set Y axis range.
-pub fn Chart::yRange(self : Chart, min : Double, max : Double) -> Chart {
-  let yAxis = { ..self.option.yAxis, kind: Linear(min, max) }
-  { ..self, option: { ..self.option, yAxis } }
+/// Set height only.
+pub fn Chart::height(self : Chart, h : Double) -> Chart {
+  { ..self, option: { ..self.option, height: h } }
 }
 
 /// Set X axis label.
@@ -48,6 +46,64 @@ pub fn Chart::yLabel(self : Chart, label : String) -> Chart {
   { ..self, option: { ..self.option, yAxis } }
 }
 
+/// Set X axis categories.
+pub fn Chart::xCategories(self : Chart, labels : Array[String]) -> Chart {
+  let xAxis = AxisOption::categories(labels)
+  { ..self, option: { ..self.option, xAxis } }
+}
+
+/// Set Y axis range.
+pub fn Chart::yRange(self : Chart, min : Double, max : Double) -> Chart {
+  let yAxis = { ..self.option.yAxis, kind: Linear(min, max) }
+  { ..self, option: { ..self.option, yAxis } }
+}
+
+/// Set tick font size for both axes.
+pub fn Chart::tickFontSize(self : Chart, size : Double) -> Chart {
+  let xAxis = { ..self.option.xAxis, tickFontSize: size }
+  let yAxis = { ..self.option.yAxis, tickFontSize: size }
+  { ..self, option: { ..self.option, xAxis, yAxis } }
+}
+
+/// Set axis label (title) font size for both axes.
+pub fn Chart::labelFontSize(self : Chart, size : Double) -> Chart {
+  let xAxis = { ..self.option.xAxis, labelFontSize: size }
+  let yAxis = { ..self.option.yAxis, labelFontSize: size }
+  { ..self, option: { ..self.option, xAxis, yAxis } }
+}
+
+/// Enable Y-axis grid lines.
+pub fn Chart::yGrid(self : Chart, show : Bool) -> Chart {
+  let yAxis = { ..self.option.yAxis, gridLine: show }
+  { ..self, option: { ..self.option, yAxis } }
+}
+
+/// Enable X-axis grid lines.
+pub fn Chart::xGrid(self : Chart, show : Bool) -> Chart {
+  let xAxis = { ..self.option.xAxis, gridLine: show }
+  { ..self, option: { ..self.option, xAxis } }
+}
+
+/// Set bar width ratio (0.0~1.0).
+pub fn Chart::barWidthRatio(self : Chart, ratio : Double) -> Chart {
+  { ..self, option: { ..self.option, barWidthRatio: ratio } }
+}
+
+/// Set bar gap ratio (0.0~1.0).
+pub fn Chart::barGap(self : Chart, gap : Double) -> Chart {
+  { ..self, option: { ..self.option, barGap: gap } }
+}
+
+/// Set legend font size.
+pub fn Chart::legendFontSize(self : Chart, size : Double) -> Chart {
+  { ..self, option: { ..self.option, legendFontSize: size } }
+}
+
+/// Set legend visibility and position.
+pub fn Chart::legend(self : Chart, show : Bool, position : Position) -> Chart {
+  { ..self, option: { ..self.option, legend: show, legendPosition: position } }
+}
+
 /// Add a series to the chart.
 pub fn Chart::series(self : Chart, s : Series) -> Chart {
   let newSeries = self.option.series.copy()
@@ -56,9 +112,23 @@ pub fn Chart::series(self : Chart, s : Series) -> Chart {
   { ..self, option: { ..self.option, series: newSeries, legend } }
 }
 
+/// Add multiple series at once.
+pub fn Chart::addSeries(self : Chart, ss : Array[Series]) -> Chart {
+  let mut chart = self
+  for i = 0; i < ss.length(); i = i + 1 {
+    chart = chart.series(ss[i])
+  }
+  chart
+}
+
 /// Set chart margins.
 pub fn Chart::margin(self : Chart, top : Double, right : Double, bottom : Double, left : Double) -> Chart {
   { ..self, option: { ..self.option, margin: { top, right, bottom, left } } }
+}
+
+/// Export the internal ChartOption (escape hatch for advanced users).
+pub fn Chart::toOption(self : Chart) -> ChartOption {
+  self.option
 }
 
 /// Render the chart to an SVG string.
@@ -102,6 +172,9 @@ pub fn render(opt : ChartOption) -> Result[String, String] {
     // Render error bars on top
     svg = svg + renderErrorBars(layout, opt, i) + "\n"
   }
+
+  // Render legend
+  svg = svg + renderLegend(layout, opt) + "\n"
 
   svg = svg + svgClose()
 

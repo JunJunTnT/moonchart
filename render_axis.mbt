@@ -59,6 +59,15 @@ pub fn renderYAxis(layout : Layout, opt : ChartOption) -> String {
     let (pixel, label) = ticks[i]
     let yPos = plot.bottom() - pixel
 
+    // Grid line (horizontal across plot area)
+    if axis.gridLine {
+      svg = svg + line(
+        x1= plot.left(), y1= yPos,
+        x2= plot.right(), y2= yPos,
+        stroke= axis.gridColor.toSvg(), strokeWidth= axis.gridWidth,
+      ) + "\n"
+    }
+
     // Tick line
     svg = svg + line(
       x1= plot.left() - tickLength, y1= yPos,
@@ -118,6 +127,15 @@ pub fn renderXAxis(layout : Layout, opt : ChartOption) -> String {
   for i = 0; i < ticks.length(); i = i + 1 {
     let (pixel, label) = ticks[i]
     let xPos = plot.left() + pixel
+
+    // Grid line (vertical across plot area)
+    if axis.gridLine {
+      svg = svg + line(
+        x1= xPos, y1= plot.top(),
+        x2= xPos, y2= plot.bottom(),
+        stroke= axis.gridColor.toSvg(), strokeWidth= axis.gridWidth,
+      ) + "\n"
+    }
 
     // Tick line
     svg = svg + line(
