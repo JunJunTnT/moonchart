@@ -56,6 +56,11 @@ pub fn Chart::series(self : Chart, s : Series) -> Chart {
   { ..self, option: { ..self.option, series: newSeries, legend } }
 }
 
+/// Set chart margins.
+pub fn Chart::margin(self : Chart, top : Double, right : Double, bottom : Double, left : Double) -> Chart {
+  { ..self, option: { ..self.option, margin: { top, right, bottom, left } } }
+}
+
 /// Render the chart to an SVG string.
 pub fn Chart::toSvg(self : Chart) -> Result[String, String] {
   render(self.option)
@@ -78,6 +83,17 @@ pub fn render(opt : ChartOption) -> Result[String, String] {
   // Render axes
   svg = svg + renderYAxis(layout, opt) + "\n"
   svg = svg + renderXAxis(layout, opt) + "\n"
+
+  // Render each series
+  for i = 0; i < opt.series.length(); i = i + 1 {
+    let s = opt.series[i]
+    match s.chartType {
+      Bar => {
+        svg = svg + renderBars(layout, opt, i) + "\n"
+      }
+      _ => ()
+    }
+  }
 
   svg = svg + svgClose()
 
