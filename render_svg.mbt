@@ -52,13 +52,11 @@ pub fn text(
   x~ : Double,
   y~ : Double,
   content~ : String,
-  fontFamily~ : String,
-  fontSize~ : Double,
-  fill~ : String,
+  font~ : Font,
   textAnchor~ : String
 ) -> String {
   let escaped = xmlEscape(content)
-  "<text x='\{x}' y='\{y}' font-family='\{fontFamily}' font-size='\{fontSize}' fill='\{fill}' text-anchor='\{textAnchor}'>\{escaped}</text>"
+  "<text x='\{x}' y='\{y}' \{font.svgAttrs()} text-anchor='\{textAnchor}'>\{escaped}</text>"
 }
 
 /// Generate the SVG document opening.
