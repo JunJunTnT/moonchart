@@ -68,3 +68,15 @@ pub fn svgOpen(width~ : Double, height~ : Double, bg~ : String) -> String {
 pub fn svgClose() -> String {
   "</svg>"
 }
+
+/// Save an SVG string to a file in the current directory.
+/// Uses @fs.write_string_to_file from moonbitlang/x.
+/// Returns Ok(()) on success, Err(message) on failure.
+pub fn saveSvg(filename : String, svg : String) -> Result[Unit, String] {
+  try {
+    @fs.write_string_to_file(filename, svg)
+    Ok(())
+  } catch {
+    _ => Err("Failed to write file: \{filename}")
+  }
+}

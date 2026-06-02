@@ -136,6 +136,14 @@ pub fn Chart::toSvg(self : Chart) -> Result[String, String] {
   render(self.option)
 }
 
+/// Render the chart and save to a file (native target only).
+pub fn Chart::save(self : Chart, filename : String) -> Result[Unit, String] {
+  match self.toSvg() {
+    Ok(svg) => saveSvg(filename, svg)
+    Err(e) => Err(e)
+  }
+}
+
 /// Render a ChartOption directly to SVG (static entry point).
 pub fn render(opt : ChartOption) -> Result[String, String] {
   // Compute layout
@@ -167,7 +175,9 @@ pub fn render(opt : ChartOption) -> Result[String, String] {
       Scatter => {
         svg = svg + renderScatter(layout, opt, i) + "\n"
       }
-      _ => ()
+      BoxPlot => {
+        svg = svg + renderBoxplot(layout, opt, i) + "\n"
+      }
     }
     // Render error bars on top
     svg = svg + renderErrorBars(layout, opt, i) + "\n"
