@@ -22,6 +22,9 @@ fn main {
     .yRange(0.0, 100.0)
     .series(@moonchart.Series::bar("24h", ctrlData))
     .series(@moonchart.Series::bar("48h", treatData))
+    .barWidthRatio(0.4)
+    .barGap(0.1)
+    .legend(true, @moonchart.TopLeft)
     .save("bar_chart.svg")
 
   match svg {

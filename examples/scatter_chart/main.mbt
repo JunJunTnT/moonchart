@@ -40,8 +40,9 @@ fn main {
         .withPointShape(@moonchart.Triangle)
         .withPointSize(5.0)
     )
-    .size(500.0, 400.0)
-    .toSvg()
+    .legend(true, @moonchart.TopLeft)
+    // .size(500.0, 400.0)
+    .save("scatter_chart.svg")
 
   match svg {
     Ok(s) => println(s)

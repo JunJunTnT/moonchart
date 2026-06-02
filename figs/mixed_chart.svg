@@ -1,0 +1,67 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'>
+  <rect x='0' y='0' width='600' height='400' fill='rgb(255,255,255)' />
+<text x='300' y='25.6' font-family='sans-serif' font-size='16' fill='rgb(0,0,0)' font-weight='bold' text-anchor='middle'>Expression Levels with Trend</text>
+<line x1='67' y1='40' x2='67' y2='354' stroke='rgb(60,60,60)' stroke-width='1' />
+<line x1='67' y1='354' x2='580' y2='354' stroke='rgb(224,224,224)' stroke-width='0.5' />
+<line x1='62' y1='354' x2='67' y2='354' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='58' y='357.85' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='end'>0</text>
+<line x1='67' y1='291.2' x2='580' y2='291.2' stroke='rgb(224,224,224)' stroke-width='0.5' />
+<line x1='62' y1='291.2' x2='67' y2='291.2' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='58' y='295.05' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='end'>20</text>
+<line x1='67' y1='228.39999999999998' x2='580' y2='228.39999999999998' stroke='rgb(224,224,224)' stroke-width='0.5' />
+<line x1='62' y1='228.39999999999998' x2='67' y2='228.39999999999998' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='58' y='232.24999999999997' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='end'>40</text>
+<line x1='67' y1='165.6' x2='580' y2='165.6' stroke='rgb(224,224,224)' stroke-width='0.5' />
+<line x1='62' y1='165.6' x2='67' y2='165.6' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='58' y='169.45' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='end'>60</text>
+<line x1='67' y1='102.79999999999998' x2='580' y2='102.79999999999998' stroke='rgb(224,224,224)' stroke-width='0.5' />
+<line x1='62' y1='102.79999999999998' x2='67' y2='102.79999999999998' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='58' y='106.64999999999998' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='end'>80</text>
+<line x1='67' y1='40' x2='580' y2='40' stroke='rgb(224,224,224)' stroke-width='0.5' />
+<line x1='62' y1='40' x2='67' y2='40' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='58' y='43.85' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='end'>100</text>
+<text x='33.5' y='197' font-family='sans-serif' font-size='13' fill='rgb(0,0,0)' text-anchor='middle' transform='rotate(-90,33.5,197)'>Expression (fold change)</text>
+
+<line x1='67' y1='354' x2='580' y2='354' stroke='rgb(60,60,60)' stroke-width='1' />
+<line x1='131.125' y1='354' x2='131.125' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='131.125' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>0h</text>
+<line x1='259.375' y1='354' x2='259.375' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='259.375' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>6h</text>
+<line x1='387.625' y1='354' x2='387.625' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='387.625' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>12h</text>
+<line x1='515.875' y1='354' x2='515.875' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='515.875' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>24h</text>
+<text x='323.5' y='389' font-family='sans-serif' font-size='13' fill='rgb(0,0,0)' text-anchor='middle'>Time Point</text>
+
+<rect x='109.75' y='244.10000000000002' width='42.75' height='109.89999999999999' fill='rgb(93,215,255)' stroke='none' stroke-width='0' />
+<rect x='238' y='190.72' width='42.75' height='163.28' fill='rgb(93,215,255)' stroke='none' stroke-width='0' />
+<rect x='366.25' y='140.48' width='42.75' height='213.52' fill='rgb(93,215,255)' stroke='none' stroke-width='0' />
+<rect x='494.5' y='96.52000000000004' width='42.75' height='257.47999999999996' fill='rgb(93,215,255)' stroke='none' stroke-width='0' />
+
+<line x1='131.125' y1='256.65999999999997' x2='131.125' y2='231.54' stroke='rgb(0,0,0)' stroke-width='1' />
+<line x1='128.125' y1='231.54' x2='134.125' y2='231.54' stroke='rgb(0,0,0)' stroke-width='1' />
+<line x1='128.125' y1='256.65999999999997' x2='134.125' y2='256.65999999999997' stroke='rgb(0,0,0)' stroke-width='1' />
+<line x1='259.375' y1='201.71' x2='259.375' y2='179.73' stroke='rgb(0,0,0)' stroke-width='1' />
+<line x1='256.375' y1='179.73' x2='262.375' y2='179.73' stroke='rgb(0,0,0)' stroke-width='1' />
+<line x1='256.375' y1='201.71' x2='262.375' y2='201.71' stroke='rgb(0,0,0)' stroke-width='1' />
+<line x1='387.625' y1='156.18' x2='387.625' y2='124.78' stroke='rgb(0,0,0)' stroke-width='1' />
+<line x1='384.625' y1='124.78' x2='390.625' y2='124.78' stroke='rgb(0,0,0)' stroke-width='1' />
+<line x1='384.625' y1='156.18' x2='390.625' y2='156.18' stroke='rgb(0,0,0)' stroke-width='1' />
+<line x1='515.875' y1='105.94' x2='515.875' y2='87.10000000000002' stroke='rgb(0,0,0)' stroke-width='1' />
+<line x1='512.875' y1='87.10000000000002' x2='518.875' y2='87.10000000000002' stroke='rgb(0,0,0)' stroke-width='1' />
+<line x1='512.875' y1='105.94' x2='518.875' y2='105.94' stroke='rgb(0,0,0)' stroke-width='1' />
+
+<polyline points='131.125,291.2 259.375,165.6 387.625,118.5 515.875,102.79999999999998' stroke='rgb(212,57,57)' stroke-width='2' fill='none' stroke-linejoin='round' stroke-linecap='round' />
+<polygon points='131.125,283.2 139.125,291.2 131.125,299.2 123.125,291.2' fill='rgb(212,57,57)' stroke='white' stroke-width='0.5' />
+<polygon points='259.375,157.6 267.375,165.6 259.375,173.6 251.375,165.6' fill='rgb(212,57,57)' stroke='white' stroke-width='0.5' />
+<polygon points='387.625,110.5 395.625,118.5 387.625,126.5 379.625,118.5' fill='rgb(212,57,57)' stroke='white' stroke-width='0.5' />
+<polygon points='515.875,94.79999999999998 523.875,102.79999999999998 515.875,110.79999999999998 507.875,102.79999999999998' fill='rgb(212,57,57)' stroke='white' stroke-width='0.5' />
+
+
+<rect x='436.4' y='48' width='135.6' height='45.6' fill='white' stroke='#ccc' stroke-width='1' />
+<rect x='446' y='56.4' width='10.8' height='10.8' fill='rgb(93,215,255)' stroke='none' stroke-width='0' />
+<text x='461.6' y='66' font-family='sans-serif' font-size='12' fill='rgb(0,0,0)' text-anchor='start'>mRNA Level</text>
+<line x1='446' y1='79.8' x2='456.8' y2='79.8' stroke='rgb(212,57,57)' stroke-width='2' />
+<text x='461.6' y='84' font-family='sans-serif' font-size='12' fill='rgb(0,0,0)' text-anchor='start'>Expected Trend</text>
+
+</svg>

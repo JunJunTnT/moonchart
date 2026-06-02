@@ -1,0 +1,78 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'>
+  <rect x='0' y='0' width='600' height='400' fill='rgb(255,255,255)' />
+<text x='300' y='25.6' font-family='sans-serif' font-size='16' fill='rgb(0,0,0)' font-weight='bold' text-anchor='middle'>Correlation Analysis</text>
+<line x1='67' y1='40' x2='67' y2='354' stroke='rgb(60,60,60)' stroke-width='1' />
+<line x1='62' y1='354' x2='67' y2='354' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='58' y='357.85' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='end'>0</text>
+<line x1='62' y1='275.5' x2='67' y2='275.5' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='58' y='279.35' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='end'>5</text>
+<line x1='62' y1='197' x2='67' y2='197' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='58' y='200.85' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='end'>10</text>
+<line x1='62' y1='118.5' x2='67' y2='118.5' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='58' y='122.35' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='end'>15</text>
+<line x1='62' y1='40' x2='67' y2='40' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='58' y='43.85' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='end'>20</text>
+<text x='33.5' y='197' font-family='sans-serif' font-size='13' fill='rgb(0,0,0)' text-anchor='middle' transform='rotate(-90,33.5,197)'>Variable Y</text>
+
+<line x1='67' y1='354' x2='580' y2='354' stroke='rgb(60,60,60)' stroke-width='1' />
+<line x1='83.03125' y1='354' x2='83.03125' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='83.03125' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>1</text>
+<line x1='96.20761986301369' y1='354' x2='96.20761986301369' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='96.20761986301369' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>1.2</text>
+<line x1='148.9130993150685' y1='354' x2='148.9130993150685' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='148.9130993150685' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>2</text>
+<line x1='168.677654109589' y1='354' x2='168.677654109589' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='168.677654109589' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>2.3</text>
+<line x1='221.38313356164383' y1='354' x2='221.38313356164383' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='221.38313356164383' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>3.1</text>
+<line x1='234.55950342465746' y1='354' x2='234.55950342465746' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='234.55950342465746' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>3.3</text>
+<line x1='280.6767979452054' y1='354' x2='280.6767979452054' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='280.6767979452054' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>4</text>
+<line x1='313.61772260273966' y1='354' x2='313.61772260273966' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='313.61772260273966' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>4.5</text>
+<line x1='346.558647260274' y1='354' x2='346.558647260274' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='346.558647260274' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>5</text>
+<line x1='379.49957191780817' y1='354' x2='379.49957191780817' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='379.49957191780817' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>5.5</text>
+<line x1='425.6168664383561' y1='354' x2='425.6168664383561' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='425.6168664383561' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>6.2</text>
+<line x1='465.1459760273972' y1='354' x2='465.1459760273972' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='465.1459760273972' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>6.8</text>
+<line x1='484.91053082191775' y1='354' x2='484.91053082191775' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='484.91053082191775' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>7.1</text>
+<line x1='511.2632705479451' y1='354' x2='511.2632705479451' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='511.2632705479451' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>7.5</text>
+<line x1='544.2041952054794' y1='354' x2='544.2041952054794' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='544.2041952054794' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>8</text>
+<line x1='563.96875' y1='354' x2='563.96875' y2='359' stroke='rgb(60,60,60)' stroke-width='1' />
+<text x='563.96875' y='372' font-family='sans-serif' font-size='11' fill='rgb(60,60,60)' text-anchor='middle'>8.3</text>
+<text x='323.5' y='389' font-family='sans-serif' font-size='13' fill='rgb(0,0,0)' text-anchor='middle'>Variable X</text>
+
+<circle cx='96.20761986301369' cy='321.03' r='5' fill='rgb(0,122,184)' stroke='white' stroke-width='0.5' />
+<circle cx='168.677654109589' cy='294.34' r='5' fill='rgb(0,122,184)' stroke='white' stroke-width='0.5' />
+<circle cx='221.38313356164383' cy='272.36' r='5' fill='rgb(0,122,184)' stroke='white' stroke-width='0.5' />
+<circle cx='313.61772260273966' cy='244.10000000000002' r='5' fill='rgb(0,122,184)' stroke='white' stroke-width='0.5' />
+<circle cx='346.558647260274' cy='207.98999999999998' r='5' fill='rgb(0,122,184)' stroke='white' stroke-width='0.5' />
+<circle cx='425.6168664383561' cy='173.45000000000002' r='5' fill='rgb(0,122,184)' stroke='white' stroke-width='0.5' />
+<circle cx='484.91053082191775' cy='134.20000000000002' r='5' fill='rgb(0,122,184)' stroke='white' stroke-width='0.5' />
+<circle cx='563.96875' cy='99.66000000000003' r='5' fill='rgb(0,122,184)' stroke='white' stroke-width='0.5' />
+
+
+<polygon points='83.03125,300.4 78.03125,311.9 88.03125,311.9' fill='rgb(212,57,57)' stroke='white' stroke-width='0.5' />
+<polygon points='148.9130993150685,265.86 143.9130993150685,277.36 153.9130993150685,277.36' fill='rgb(212,57,57)' stroke='white' stroke-width='0.5' />
+<polygon points='234.55950342465746,240.74 229.55950342465746,252.24 239.55950342465746,252.24' fill='rgb(212,57,57)' stroke='white' stroke-width='0.5' />
+<polygon points='280.6767979452054,214.05 275.6767979452054,225.55 285.6767979452054,225.55' fill='rgb(212,57,57)' stroke='white' stroke-width='0.5' />
+<polygon points='379.49957191780817,190.5 374.49957191780817,202 384.49957191780817,202' fill='rgb(212,57,57)' stroke='white' stroke-width='0.5' />
+<polygon points='465.1459760273972,143.4 460.1459760273972,154.9 470.1459760273972,154.9' fill='rgb(212,57,57)' stroke='white' stroke-width='0.5' />
+<polygon points='511.2632705479451,104.15 506.2632705479451,115.65 516.2632705479451,115.65' fill='rgb(212,57,57)' stroke='white' stroke-width='0.5' />
+<polygon points='544.2041952054794,68.04000000000002 539.2041952054794,79.54000000000002 549.2041952054794,79.54000000000002' fill='rgb(212,57,57)' stroke='white' stroke-width='0.5' />
+
+
+<rect x='75' y='48' width='85.2' height='45.6' fill='white' stroke='#ccc' stroke-width='1' />
+<circle cx='90' cy='61.8' r='5.4' fill='rgb(0,122,184)' stroke='none' stroke-width='0' />
+<text x='100.19999999999999' y='66' font-family='sans-serif' font-size='12' fill='rgb(0,0,0)' text-anchor='start'>Group A</text>
+<circle cx='90' cy='79.8' r='5.4' fill='rgb(212,57,57)' stroke='none' stroke-width='0' />
+<text x='100.19999999999999' y='84' font-family='sans-serif' font-size='12' fill='rgb(0,0,0)' text-anchor='start'>Group B</text>
+
+</svg>

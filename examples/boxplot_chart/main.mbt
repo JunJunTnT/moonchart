@@ -25,8 +25,8 @@ fn main {
     .yLabel("Expression Level")
     .yRange(0.0, 5.0)
     .yGrid(true)
-    .barWidthRatio(0.4)
-    .barGap(0.5)
+    .barWidthRatio(0.2)
+    .barGap(0.8)
     .legend(true, @moonchart.TopRight)
     .series(
       @moonchart.Series::boxplot("mRNA", [mRNA_ctrl, mRNA_treat])
@@ -38,7 +38,7 @@ fn main {
         .withColor(@moonchart.Color::rgb(212, 57, 57))
         .withShowOutliers(false)
     )
-    .toSvg()
+    .save("boxplot_chart.svg")
 
   match svg {
     Ok(s) => println(s)

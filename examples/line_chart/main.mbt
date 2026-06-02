@@ -26,8 +26,8 @@ fn main {
     .yRange(0.0, 110.0)
     .series(@moonchart.Series::line("Drug A", seriesA).withColor(@moonchart.Color::rgb(0, 122, 184)))
     .series(@moonchart.Series::line("Drug B", seriesB).withColor(@moonchart.Color::rgb(212, 57, 57)))
-    .toSvg()
-
+    .save("line_chart.svg")
+    
   match svg {
     Ok(s) => println(s)
     Err(e) => println("Error: \{e}")

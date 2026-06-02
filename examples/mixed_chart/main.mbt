@@ -9,8 +9,8 @@ fn main {
   ]
   let trendData = [
     @moonchart.DataPoint::new(0.0, 20.0),
-    @moonchart.DataPoint::new(1.0, 40.0),
-    @moonchart.DataPoint::new(2.0, 60.0),
+    @moonchart.DataPoint::new(1.0, 60.0),
+    @moonchart.DataPoint::new(2.0, 75.0),
     @moonchart.DataPoint::new(3.0, 80.0),
   ]
 
@@ -21,13 +21,18 @@ fn main {
     .yLabel("Expression (fold change)")
     .yRange(0.0, 100.0)
     .yGrid(true)
-    .series(@moonchart.Series::bar("mRNA Level", barData))
+    .barWidthRatio(0.25)
+    .series(
+      @moonchart.Series::bar("mRNA Level", barData)
+      .withColor(@moonchart.Color::rgb(93, 215, 255))
+    )
     .series(
       @moonchart.Series::line("Expected Trend", trendData)
         .withColor(@moonchart.Color::rgb(212, 57, 57))
-        .withPointSize(3.0)
+        .withPointSize(8.0)
+        .withPointShape(@moonchart.Diamond)
     )
-    .toSvg()
+    .save("mixed_chart.svg")
 
   match svg {
     Ok(s) => println(s)
