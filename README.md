@@ -29,6 +29,17 @@ import "JunJunTvT/moonchart"
   <img src="figs/boxplot_chart.png" width="45%" alt="Box Plot" />
 </p>
 
+## Performance
+
+MoonChart delivers **sub-millisecond** SVG rendering via WASM — 500x faster than matplotlib and 20x faster than ECharts on the same input→SVG pipeline.
+
+| Library | Mean Render Time | Speedup (vs matplotlib) |
+|---------|-----------------|--------------------------|
+| **MoonChart (WASM)** | **98.3 μs** | **501×** |
+| ECharts (SSR) | 1.97 ms | 25× |
+| matplotlib (Agg) | 49.2 ms | 1× |
+
+
 ## Quick Start
 
 A minimal bar chart with error bars:

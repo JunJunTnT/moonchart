@@ -1,15 +1,15 @@
 {
-  "source_dir": "E:\\projects\\moonbit\\moonchart",
+  "source_dir": "E:\\projects\\moonbit\\moonchart\\moonchart",
   "name": "JunJunTvT/moonchart",
   "packages": [
     {
       "is-main": false,
       "is-third-party": false,
-      "root-path": "E:\\projects\\moonbit\\moonchart",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart",
       "root": "JunJunTvT/moonchart",
       "rel": "",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\chart.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\chart.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -22,7 +22,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\layout.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\layout.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -35,7 +35,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\moonchart.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\moonchart.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -48,7 +48,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\option.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\option.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -61,7 +61,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\render_axis.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_axis.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -74,7 +74,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\render_bar.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_bar.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -87,7 +87,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\render_boxplot.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_boxplot.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -100,7 +100,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\render_errorbar.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_errorbar.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -113,7 +113,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\render_legend.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_legend.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -126,7 +126,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\render_line.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_line.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -139,7 +139,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\render_scatter.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_scatter.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -152,7 +152,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\render_svg.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_svg.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -165,7 +165,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\scale.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\scale.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -178,7 +178,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\stats.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\stats.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -191,7 +191,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\theme.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\theme.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -206,7 +206,7 @@
         }
       },
       "wbtest-files": {
-        "E:\\projects\\moonbit\\moonchart\\moonchart_wbtest.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\moonchart_wbtest.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -221,7 +221,7 @@
         }
       },
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\moonchart_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\moonchart_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -235,21 +235,7 @@
           ]
         }
       },
-      "mbt-md-files": {
-        "E:\\projects\\moonbit\\moonchart\\README.mbt.md": {
-          "backend": [
-            "Wasm",
-            "WasmGC",
-            "Js",
-            "Native",
-            "LLVM"
-          ],
-          "optlevel": [
-            "Release",
-            "Debug"
-          ]
-        }
-      },
+      "mbt-md-files": {},
       "deps": [
         {
           "path": "moonbitlang/core/math",
@@ -264,7 +250,7 @@
         {
           "path": "moonbitlang/x/fs",
           "alias": "fs",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\fs"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\fs"
         }
       ],
       "wbtest-deps": [
@@ -281,149 +267,148 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi",
       "check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\chart.mbt",
-        "E:\\projects\\moonbit\\moonchart\\layout.mbt",
-        "E:\\projects\\moonbit\\moonchart\\moonchart.mbt",
-        "E:\\projects\\moonbit\\moonchart\\option.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_axis.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_bar.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_boxplot.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_errorbar.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_legend.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_line.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_scatter.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_svg.mbt",
-        "E:\\projects\\moonbit\\moonchart\\scale.mbt",
-        "E:\\projects\\moonbit\\moonchart\\stats.mbt",
-        "E:\\projects\\moonbit\\moonchart\\theme.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\chart.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\layout.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\moonchart.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\option.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_axis.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_bar.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_boxplot.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_errorbar.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_legend.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_line.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_scatter.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_svg.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\scale.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\stats.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\theme.mbt",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi",
         "-pkg",
         "JunJunTvT/moonchart",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\fs\\fs.mi:fs",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\fs\\fs.mi:fs",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\math\\math.mi:math",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart:E:\\projects\\moonbit\\moonchart",
+        "JunJunTvT/moonchart:E:\\projects\\moonbit\\moonchart\\moonchart",
         "-target",
         "wasm-gc",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "wbtest-check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\chart.mbt",
-        "E:\\projects\\moonbit\\moonchart\\layout.mbt",
-        "E:\\projects\\moonbit\\moonchart\\moonchart.mbt",
-        "E:\\projects\\moonbit\\moonchart\\option.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_axis.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_bar.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_boxplot.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_errorbar.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_legend.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_line.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_scatter.mbt",
-        "E:\\projects\\moonbit\\moonchart\\render_svg.mbt",
-        "E:\\projects\\moonbit\\moonchart\\scale.mbt",
-        "E:\\projects\\moonbit\\moonchart\\stats.mbt",
-        "E:\\projects\\moonbit\\moonchart\\theme.mbt",
-        "E:\\projects\\moonbit\\moonchart\\moonchart_wbtest.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\chart.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\layout.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\moonchart.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\option.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_axis.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_bar.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_boxplot.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_errorbar.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_legend.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_line.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_scatter.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_svg.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\scale.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\stats.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\theme.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\moonchart_wbtest.mbt",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.whitebox_test.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.whitebox_test.mi",
         "-pkg",
         "JunJunTvT/moonchart",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\fs\\fs.mi:fs",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\fs\\fs.mi:fs",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\math\\math.mi:math",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart:E:\\projects\\moonbit\\moonchart",
+        "JunJunTvT/moonchart:E:\\projects\\moonbit\\moonchart\\moonchart",
         "-target",
         "wasm-gc",
         "-whitebox-test",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "test-check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\README.mbt.md",
-        "E:\\projects\\moonbit\\moonchart\\moonchart_test.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\moonchart_test.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\chart.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\chart.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\layout.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\layout.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\moonchart.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\moonchart.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\option.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\option.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\render_axis.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_axis.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\render_bar.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_bar.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\render_boxplot.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_boxplot.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\render_errorbar.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_errorbar.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\render_legend.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_legend.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\render_line.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_line.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\render_scatter.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_scatter.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\render_svg.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\render_svg.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\scale.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\scale.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\stats.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\stats.mbt",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\theme.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\theme.mbt",
         "-include-doctests",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.blackbox_test.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.blackbox_test.mi",
         "-pkg",
         "JunJunTvT/moonchart_blackbox_test",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\fs\\fs.mi:fs",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\fs\\fs.mi:fs",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\math\\math.mi:math",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart_blackbox_test:E:\\projects\\moonbit\\moonchart",
+        "JunJunTvT/moonchart_blackbox_test:E:\\projects\\moonbit\\moonchart\\moonchart",
         "-target",
         "wasm-gc",
         "-blackbox-test",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "supported-targets": [
         "Wasm",
@@ -436,11 +421,11 @@
     {
       "is-main": true,
       "is-third-party": false,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\cmd\\main",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\cmd\\main",
       "root": "JunJunTvT/moonchart",
       "rel": "cmd/main",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\cmd\\main\\main.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\cmd\\main\\main.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -461,7 +446,7 @@
         {
           "path": "JunJunTvT/moonchart",
           "alias": "moonchart",
-          "fspath": "E:\\projects\\moonbit\\moonchart"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart"
         },
         {
           "path": "moonbitlang/core/prelude",
@@ -483,31 +468,31 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\cmd\\main\\main.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\cmd\\main\\main.mi",
       "check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\cmd\\main\\main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\cmd\\main\\main.mbt",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\cmd\\main\\main.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\cmd\\main\\main.mi",
         "-pkg",
         "JunJunTvT/moonchart/cmd/main",
         "-is-main",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart/cmd/main:E:\\projects\\moonbit\\moonchart\\cmd\\main",
+        "JunJunTvT/moonchart/cmd/main:E:\\projects\\moonbit\\moonchart\\moonchart\\cmd\\main",
         "-target",
         "wasm-gc",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "wbtest-check-command": null,
       "test-check-command": [
@@ -515,29 +500,29 @@
         "-error-format",
         "json",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\cmd\\main\\main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\cmd\\main\\main.mbt",
         "-include-doctests",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\cmd\\main\\main.blackbox_test.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\cmd\\main\\main.blackbox_test.mi",
         "-pkg",
         "JunJunTvT/moonchart/cmd/main_blackbox_test",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\cmd\\main\\main.mi:main",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\cmd\\main\\main.mi:main",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart/cmd/main_blackbox_test:E:\\projects\\moonbit\\moonchart\\cmd\\main",
+        "JunJunTvT/moonchart/cmd/main_blackbox_test:E:\\projects\\moonbit\\moonchart\\moonchart\\cmd\\main",
         "-target",
         "wasm-gc",
         "-blackbox-test",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "supported-targets": [
         "Wasm",
@@ -550,11 +535,11 @@
     {
       "is-main": true,
       "is-third-party": false,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\examples\\bar_chart",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\bar_chart",
       "root": "JunJunTvT/moonchart",
       "rel": "examples/bar_chart",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\examples\\bar_chart\\main.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\bar_chart\\main.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -575,7 +560,7 @@
         {
           "path": "JunJunTvT/moonchart",
           "alias": "moonchart",
-          "fspath": "E:\\projects\\moonbit\\moonchart"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart"
         },
         {
           "path": "moonbitlang/core/prelude",
@@ -597,31 +582,31 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\bar_chart\\bar_chart.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\bar_chart\\bar_chart.mi",
       "check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\examples\\bar_chart\\main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\bar_chart\\main.mbt",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\bar_chart\\bar_chart.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\bar_chart\\bar_chart.mi",
         "-pkg",
         "JunJunTvT/moonchart/examples/bar_chart",
         "-is-main",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart/examples/bar_chart:E:\\projects\\moonbit\\moonchart\\examples\\bar_chart",
+        "JunJunTvT/moonchart/examples/bar_chart:E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\bar_chart",
         "-target",
         "wasm-gc",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "wbtest-check-command": null,
       "test-check-command": [
@@ -629,29 +614,29 @@
         "-error-format",
         "json",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\examples\\bar_chart\\main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\bar_chart\\main.mbt",
         "-include-doctests",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\bar_chart\\bar_chart.blackbox_test.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\bar_chart\\bar_chart.blackbox_test.mi",
         "-pkg",
         "JunJunTvT/moonchart/examples/bar_chart_blackbox_test",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\bar_chart\\bar_chart.mi:bar_chart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\bar_chart\\bar_chart.mi:bar_chart",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart/examples/bar_chart_blackbox_test:E:\\projects\\moonbit\\moonchart\\examples\\bar_chart",
+        "JunJunTvT/moonchart/examples/bar_chart_blackbox_test:E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\bar_chart",
         "-target",
         "wasm-gc",
         "-blackbox-test",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "supported-targets": [
         "Wasm",
@@ -664,11 +649,11 @@
     {
       "is-main": true,
       "is-third-party": false,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\examples\\boxplot_chart",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\boxplot_chart",
       "root": "JunJunTvT/moonchart",
       "rel": "examples/boxplot_chart",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\examples\\boxplot_chart\\main.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\boxplot_chart\\main.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -689,7 +674,7 @@
         {
           "path": "JunJunTvT/moonchart",
           "alias": "moonchart",
-          "fspath": "E:\\projects\\moonbit\\moonchart"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart"
         },
         {
           "path": "moonbitlang/core/prelude",
@@ -711,31 +696,31 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\boxplot_chart\\boxplot_chart.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\boxplot_chart\\boxplot_chart.mi",
       "check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\examples\\boxplot_chart\\main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\boxplot_chart\\main.mbt",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\boxplot_chart\\boxplot_chart.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\boxplot_chart\\boxplot_chart.mi",
         "-pkg",
         "JunJunTvT/moonchart/examples/boxplot_chart",
         "-is-main",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart/examples/boxplot_chart:E:\\projects\\moonbit\\moonchart\\examples\\boxplot_chart",
+        "JunJunTvT/moonchart/examples/boxplot_chart:E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\boxplot_chart",
         "-target",
         "wasm-gc",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "wbtest-check-command": null,
       "test-check-command": [
@@ -743,29 +728,29 @@
         "-error-format",
         "json",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\examples\\boxplot_chart\\main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\boxplot_chart\\main.mbt",
         "-include-doctests",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\boxplot_chart\\boxplot_chart.blackbox_test.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\boxplot_chart\\boxplot_chart.blackbox_test.mi",
         "-pkg",
         "JunJunTvT/moonchart/examples/boxplot_chart_blackbox_test",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\boxplot_chart\\boxplot_chart.mi:boxplot_chart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\boxplot_chart\\boxplot_chart.mi:boxplot_chart",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart/examples/boxplot_chart_blackbox_test:E:\\projects\\moonbit\\moonchart\\examples\\boxplot_chart",
+        "JunJunTvT/moonchart/examples/boxplot_chart_blackbox_test:E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\boxplot_chart",
         "-target",
         "wasm-gc",
         "-blackbox-test",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "supported-targets": [
         "Wasm",
@@ -778,11 +763,11 @@
     {
       "is-main": true,
       "is-third-party": false,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\examples\\line_chart",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\line_chart",
       "root": "JunJunTvT/moonchart",
       "rel": "examples/line_chart",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\examples\\line_chart\\main.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\line_chart\\main.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -803,7 +788,7 @@
         {
           "path": "JunJunTvT/moonchart",
           "alias": "moonchart",
-          "fspath": "E:\\projects\\moonbit\\moonchart"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart"
         },
         {
           "path": "moonbitlang/core/prelude",
@@ -825,31 +810,31 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\line_chart\\line_chart.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\line_chart\\line_chart.mi",
       "check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\examples\\line_chart\\main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\line_chart\\main.mbt",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\line_chart\\line_chart.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\line_chart\\line_chart.mi",
         "-pkg",
         "JunJunTvT/moonchart/examples/line_chart",
         "-is-main",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart/examples/line_chart:E:\\projects\\moonbit\\moonchart\\examples\\line_chart",
+        "JunJunTvT/moonchart/examples/line_chart:E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\line_chart",
         "-target",
         "wasm-gc",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "wbtest-check-command": null,
       "test-check-command": [
@@ -857,29 +842,29 @@
         "-error-format",
         "json",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\examples\\line_chart\\main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\line_chart\\main.mbt",
         "-include-doctests",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\line_chart\\line_chart.blackbox_test.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\line_chart\\line_chart.blackbox_test.mi",
         "-pkg",
         "JunJunTvT/moonchart/examples/line_chart_blackbox_test",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\line_chart\\line_chart.mi:line_chart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\line_chart\\line_chart.mi:line_chart",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart/examples/line_chart_blackbox_test:E:\\projects\\moonbit\\moonchart\\examples\\line_chart",
+        "JunJunTvT/moonchart/examples/line_chart_blackbox_test:E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\line_chart",
         "-target",
         "wasm-gc",
         "-blackbox-test",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "supported-targets": [
         "Wasm",
@@ -892,11 +877,11 @@
     {
       "is-main": true,
       "is-third-party": false,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\examples\\mixed_chart",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\mixed_chart",
       "root": "JunJunTvT/moonchart",
       "rel": "examples/mixed_chart",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\examples\\mixed_chart\\main.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\mixed_chart\\main.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -917,7 +902,7 @@
         {
           "path": "JunJunTvT/moonchart",
           "alias": "moonchart",
-          "fspath": "E:\\projects\\moonbit\\moonchart"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart"
         },
         {
           "path": "moonbitlang/core/prelude",
@@ -939,31 +924,31 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\mixed_chart\\mixed_chart.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\mixed_chart\\mixed_chart.mi",
       "check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\examples\\mixed_chart\\main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\mixed_chart\\main.mbt",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\mixed_chart\\mixed_chart.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\mixed_chart\\mixed_chart.mi",
         "-pkg",
         "JunJunTvT/moonchart/examples/mixed_chart",
         "-is-main",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart/examples/mixed_chart:E:\\projects\\moonbit\\moonchart\\examples\\mixed_chart",
+        "JunJunTvT/moonchart/examples/mixed_chart:E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\mixed_chart",
         "-target",
         "wasm-gc",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "wbtest-check-command": null,
       "test-check-command": [
@@ -971,29 +956,29 @@
         "-error-format",
         "json",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\examples\\mixed_chart\\main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\mixed_chart\\main.mbt",
         "-include-doctests",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\mixed_chart\\mixed_chart.blackbox_test.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\mixed_chart\\mixed_chart.blackbox_test.mi",
         "-pkg",
         "JunJunTvT/moonchart/examples/mixed_chart_blackbox_test",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\mixed_chart\\mixed_chart.mi:mixed_chart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\mixed_chart\\mixed_chart.mi:mixed_chart",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart/examples/mixed_chart_blackbox_test:E:\\projects\\moonbit\\moonchart\\examples\\mixed_chart",
+        "JunJunTvT/moonchart/examples/mixed_chart_blackbox_test:E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\mixed_chart",
         "-target",
         "wasm-gc",
         "-blackbox-test",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "supported-targets": [
         "Wasm",
@@ -1006,11 +991,11 @@
     {
       "is-main": true,
       "is-third-party": false,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\examples\\scatter_chart",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\scatter_chart",
       "root": "JunJunTvT/moonchart",
       "rel": "examples/scatter_chart",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\examples\\scatter_chart\\main.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\scatter_chart\\main.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1031,7 +1016,7 @@
         {
           "path": "JunJunTvT/moonchart",
           "alias": "moonchart",
-          "fspath": "E:\\projects\\moonbit\\moonchart"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart"
         },
         {
           "path": "moonbitlang/core/prelude",
@@ -1053,31 +1038,31 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\scatter_chart\\scatter_chart.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\scatter_chart\\scatter_chart.mi",
       "check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\examples\\scatter_chart\\main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\scatter_chart\\main.mbt",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\scatter_chart\\scatter_chart.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\scatter_chart\\scatter_chart.mi",
         "-pkg",
         "JunJunTvT/moonchart/examples/scatter_chart",
         "-is-main",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart/examples/scatter_chart:E:\\projects\\moonbit\\moonchart\\examples\\scatter_chart",
+        "JunJunTvT/moonchart/examples/scatter_chart:E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\scatter_chart",
         "-target",
         "wasm-gc",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "wbtest-check-command": null,
       "test-check-command": [
@@ -1085,29 +1070,29 @@
         "-error-format",
         "json",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\examples\\scatter_chart\\main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\scatter_chart\\main.mbt",
         "-include-doctests",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\scatter_chart\\scatter_chart.blackbox_test.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\scatter_chart\\scatter_chart.blackbox_test.mi",
         "-pkg",
         "JunJunTvT/moonchart/examples/scatter_chart_blackbox_test",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\scatter_chart\\scatter_chart.mi:scatter_chart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\examples\\scatter_chart\\scatter_chart.mi:scatter_chart",
         "-pkg-sources",
-        "JunJunTvT/moonchart/examples/scatter_chart_blackbox_test:E:\\projects\\moonbit\\moonchart\\examples\\scatter_chart",
+        "JunJunTvT/moonchart/examples/scatter_chart_blackbox_test:E:\\projects\\moonbit\\moonchart\\moonchart\\examples\\scatter_chart",
         "-target",
         "wasm-gc",
         "-blackbox-test",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "supported-targets": [
         "Wasm",
@@ -1120,11 +1105,11 @@
     {
       "is-main": false,
       "is-third-party": false,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\wasm",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\wasm",
       "root": "JunJunTvT/moonchart",
       "rel": "wasm",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\wasm\\wasm_api.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\wasm\\wasm_api.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1145,7 +1130,7 @@
         {
           "path": "JunJunTvT/moonchart",
           "alias": "moonchart",
-          "fspath": "E:\\projects\\moonbit\\moonchart"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart"
         },
         {
           "path": "moonbitlang/core/prelude",
@@ -1155,7 +1140,7 @@
         {
           "path": "moonbitlang/x/json5",
           "alias": "json5",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5"
         }
       ],
       "wbtest-deps": [
@@ -1172,32 +1157,32 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\wasm\\wasm.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\wasm\\wasm.mi",
       "check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\wasm\\wasm_api.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\wasm\\wasm_api.mbt",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\wasm\\wasm.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\wasm\\wasm.mi",
         "-pkg",
         "JunJunTvT/moonchart/wasm",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\json5\\json5.mi:json5",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\json5\\json5.mi:json5",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "JunJunTvT/moonchart/wasm:E:\\projects\\moonbit\\moonchart\\wasm",
+        "JunJunTvT/moonchart/wasm:E:\\projects\\moonbit\\moonchart\\moonchart\\wasm",
         "-target",
         "wasm-gc",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "wbtest-check-command": null,
       "test-check-command": [
@@ -1205,31 +1190,31 @@
         "-error-format",
         "json",
         "-doctest-only",
-        "E:\\projects\\moonbit\\moonchart\\wasm\\wasm_api.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\wasm\\wasm_api.mbt",
         "-include-doctests",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\wasm\\wasm.blackbox_test.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\wasm\\wasm.blackbox_test.mi",
         "-pkg",
         "JunJunTvT/moonchart/wasm_blackbox_test",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\json5\\json5.mi:json5",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\json5\\json5.mi:json5",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\moonchart.mi:moonchart",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\wasm\\wasm.mi:wasm",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\wasm\\wasm.mi:wasm",
         "-pkg-sources",
-        "JunJunTvT/moonchart/wasm_blackbox_test:E:\\projects\\moonbit\\moonchart\\wasm",
+        "JunJunTvT/moonchart/wasm_blackbox_test:E:\\projects\\moonbit\\moonchart\\moonchart\\wasm",
         "-target",
         "wasm-gc",
         "-blackbox-test",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart",
+        "E:\\projects\\moonbit\\moonchart\\moonchart",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "supported-targets": [
         "Wasm",
@@ -1242,11 +1227,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\codec\\base64",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\codec\\base64",
       "root": "moonbitlang/x",
       "rel": "codec/base64",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\codec\\base64\\base64.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\codec\\base64\\base64.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1261,7 +1246,7 @@
         }
       },
       "wbtest-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\codec\\base64\\base64_wbtest.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\codec\\base64\\base64_wbtest.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1298,7 +1283,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\codec\\base64\\base64.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\codec\\base64\\base64.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -1313,11 +1298,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto",
       "root": "moonbitlang/x",
       "rel": "crypto",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\byte_source.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\byte_source.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1330,7 +1315,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\chacha.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\chacha.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1343,7 +1328,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\hmac.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\hmac.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1356,7 +1341,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\md5.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\md5.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1369,7 +1354,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sha1.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sha1.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1382,7 +1367,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sha224.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sha224.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1395,7 +1380,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sha256.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sha256.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1408,7 +1393,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sm3.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sm3.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1421,7 +1406,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\traits.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\traits.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1434,7 +1419,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\utils.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\utils.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1450,7 +1435,7 @@
       },
       "wbtest-files": {},
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\chacha_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\chacha_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1463,7 +1448,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\hmac_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\hmac_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1476,7 +1461,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\md5_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\md5_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1489,7 +1474,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sha1_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sha1_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1502,7 +1487,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sha224_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sha224_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1515,7 +1500,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sha256_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sha256_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1528,7 +1513,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sm3_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\sm3_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1543,7 +1528,7 @@
         }
       },
       "mbt-md-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\README.mbt.md": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\crypto\\README.mbt.md": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1590,10 +1575,10 @@
         {
           "path": "moonbitlang/x/encoding",
           "alias": "encoding",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\crypto\\crypto.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\crypto\\crypto.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -1608,11 +1593,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\decimal",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\decimal",
       "root": "moonbitlang/x",
       "rel": "decimal",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\decimal\\decimal.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\decimal\\decimal.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1628,7 +1613,7 @@
       },
       "wbtest-files": {},
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\decimal\\decimal_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\decimal\\decimal_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1689,7 +1674,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\decimal\\decimal.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\decimal\\decimal.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -1704,11 +1689,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding",
       "root": "moonbitlang/x",
       "rel": "encoding",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\decoding.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\decoding.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1721,7 +1706,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\encoding.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\encoding.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1734,7 +1719,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\types.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\types.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1750,7 +1735,7 @@
       },
       "wbtest-files": {},
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\decoding_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\decoding_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1763,7 +1748,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\encoding_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\encoding_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1778,7 +1763,7 @@
         }
       },
       "mbt-md-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\README.mbt.md": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\README.mbt.md": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1823,7 +1808,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\encoding\\encoding.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\encoding\\encoding.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -1838,11 +1823,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark",
       "root": "moonbitlang/x",
       "rel": "encoding/internal/benchmark",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\lib.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\lib.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1878,7 +1863,7 @@
         {
           "path": "moonbitlang/x/encoding",
           "alias": "encoding",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding"
         }
       ],
       "wbtest-deps": [
@@ -1895,7 +1880,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\benchmark.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\benchmark.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -1910,11 +1895,11 @@
     {
       "is-main": true,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\decoding_batch",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\decoding_batch",
       "root": "moonbitlang/x",
       "rel": "encoding/internal/benchmark/decoding_batch",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\decoding_batch\\main.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\decoding_batch\\main.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -1940,17 +1925,17 @@
         {
           "path": "moonbitlang/x/encoding",
           "alias": "encoding",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding"
         },
         {
           "path": "moonbitlang/x/encoding/internal/benchmark",
           "alias": "bench",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark"
         },
         {
           "path": "moonbitlang/x/sys",
           "alias": "sys",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\sys"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\sys"
         }
       ],
       "wbtest-deps": [
@@ -1967,7 +1952,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\decoding_batch\\decoding_batch.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\decoding_batch\\decoding_batch.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -1982,11 +1967,11 @@
     {
       "is-main": true,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\decoding_streaming",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\decoding_streaming",
       "root": "moonbitlang/x",
       "rel": "encoding/internal/benchmark/decoding_streaming",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\decoding_streaming\\main.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\decoding_streaming\\main.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2012,17 +1997,17 @@
         {
           "path": "moonbitlang/x/encoding",
           "alias": "encoding",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding"
         },
         {
           "path": "moonbitlang/x/encoding/internal/benchmark",
           "alias": "bench",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark"
         },
         {
           "path": "moonbitlang/x/sys",
           "alias": "sys",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\sys"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\sys"
         }
       ],
       "wbtest-deps": [
@@ -2039,7 +2024,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\decoding_streaming\\decoding_streaming.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\encoding\\internal\\benchmark\\decoding_streaming\\decoding_streaming.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -2054,11 +2039,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\fs",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\fs",
       "root": "moonbitlang/x",
       "rel": "fs",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\fs.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\fs.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2071,7 +2056,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\fs_js.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\fs_js.mbt": {
           "backend": [
             "Js"
           ],
@@ -2080,7 +2065,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\fs_native.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\fs_native.mbt": {
           "backend": [
             "Native",
             "LLVM"
@@ -2090,7 +2075,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\fs_wasm.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\fs_wasm.mbt": {
           "backend": [
             "Wasm",
             "WasmGC"
@@ -2103,7 +2088,7 @@
       },
       "wbtest-files": {},
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\blackbox_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\blackbox_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2127,7 +2112,7 @@
         {
           "path": "moonbitlang/x/internal/ffi",
           "alias": "ffi",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi"
         }
       ],
       "wbtest-deps": [
@@ -2146,36 +2131,36 @@
         {
           "path": "moonbitlang/x/encoding",
           "alias": "encoding",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\encoding"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\fs\\fs.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\fs\\fs.mi",
       "check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\fs.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\fs_wasm.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\fs.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\fs\\fs_wasm.mbt",
         "-w",
         "-a",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\fs\\fs.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\fs\\fs.mi",
         "-pkg",
         "moonbitlang/x/fs",
         "-std-path",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle",
         "-i",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\ffi.mi:ffi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\ffi.mi:ffi",
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "moonbitlang/x/fs:E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\fs",
+        "moonbitlang/x/fs:E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\fs",
         "-target",
         "wasm-gc",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -2190,11 +2175,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi",
       "root": "moonbitlang/x",
       "rel": "internal/ffi",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\byte_array_wasm.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\byte_array_wasm.mbt": {
           "backend": [
             "Wasm",
             "WasmGC"
@@ -2204,7 +2189,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\dir_wasm.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\dir_wasm.mbt": {
           "backend": [
             "Wasm",
             "WasmGC"
@@ -2214,7 +2199,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\string_convert.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\string_convert.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2227,7 +2212,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\string_wasm.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\string_wasm.mbt": {
           "backend": [
             "Wasm",
             "WasmGC"
@@ -2262,19 +2247,19 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\ffi.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\ffi.mi",
       "check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\byte_array_wasm.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\dir_wasm.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\string_convert.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\string_wasm.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\byte_array_wasm.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\dir_wasm.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\string_convert.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\string_wasm.mbt",
         "-w",
         "-a",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\ffi.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\internal\\ffi\\ffi.mi",
         "-pkg",
         "moonbitlang/x/internal/ffi",
         "-std-path",
@@ -2282,13 +2267,13 @@
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\prelude\\prelude.mi:prelude",
         "-pkg-sources",
-        "moonbitlang/x/internal/ffi:E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi",
+        "moonbitlang/x/internal/ffi:E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi",
         "-target",
         "wasm-gc",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -2303,11 +2288,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5",
       "root": "moonbitlang/x",
       "rel": "json5",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\internal_types.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\internal_types.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2320,7 +2305,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_main.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_main.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2333,7 +2318,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_misc.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_misc.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2346,7 +2331,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_number.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_number.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2359,7 +2344,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_prop.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_prop.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2372,7 +2357,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_string.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_string.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2385,7 +2370,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\parse.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\parse.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2398,7 +2383,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\types.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\types.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2411,7 +2396,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\unicode_gen.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\unicode_gen.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2424,7 +2409,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\util.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\util.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2440,7 +2425,7 @@
       },
       "wbtest-files": {},
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\parse_error_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\parse_error_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2453,7 +2438,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\parse_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\parse_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2468,7 +2453,7 @@
         }
       },
       "mbt-md-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\README.mbt.md": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\README.mbt.md": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2518,25 +2503,25 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\json5\\json5.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\json5\\json5.mi",
       "check-command": [
         "check",
         "-error-format",
         "json",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\internal_types.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_main.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_misc.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_number.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_prop.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_string.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\parse.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\types.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\unicode_gen.mbt",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\util.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\internal_types.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_main.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_misc.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_number.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_prop.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\lex_string.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\parse.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\types.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\unicode_gen.mbt",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5\\util.mbt",
         "-w",
         "-a",
         "-o",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\json5\\json5.mi",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\json5\\json5.mi",
         "-pkg",
         "moonbitlang/x/json5",
         "-std-path",
@@ -2550,13 +2535,13 @@
         "-i",
         "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\_build\\wasm-gc\\release\\bundle\\string\\string.mi:string",
         "-pkg-sources",
-        "moonbitlang/x/json5:E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\json5",
+        "moonbitlang/x/json5:E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\json5",
         "-target",
         "wasm-gc",
         "-workspace-path",
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x",
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x",
         "-all-pkgs",
-        "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\all_pkgs.json"
       ],
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -2571,11 +2556,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\num",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\num",
       "root": "moonbitlang/x",
       "rel": "num",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\num\\num.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\num\\num.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2613,7 +2598,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\num\\num.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\num\\num.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -2628,11 +2613,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path",
       "root": "moonbitlang/x",
       "rel": "path",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\path.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\path.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2658,17 +2643,17 @@
         {
           "path": "moonbitlang/x/path/internal/ffi",
           "alias": "ffi",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\internal\\ffi"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\internal\\ffi"
         },
         {
           "path": "moonbitlang/x/path/posix",
           "alias": "posix",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix"
         },
         {
           "path": "moonbitlang/x/path/win32",
           "alias": "win32",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32"
         }
       ],
       "wbtest-deps": [
@@ -2685,7 +2670,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\path\\path.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\path\\path.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -2700,11 +2685,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\internal\\ffi",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\internal\\ffi",
       "root": "moonbitlang/x",
       "rel": "path/internal/ffi",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\internal\\ffi\\is_windows.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\internal\\ffi\\is_windows.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2720,7 +2705,7 @@
       },
       "wbtest-files": {},
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\internal\\ffi\\is_windows_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\internal\\ffi\\is_windows_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2758,10 +2743,10 @@
         {
           "path": "moonbitlang/x/sys",
           "alias": "sys",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\sys"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\sys"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\path\\internal\\ffi\\ffi.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\path\\internal\\ffi\\ffi.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -2776,11 +2761,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix",
       "root": "moonbitlang/x",
       "rel": "path/posix",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix\\path.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix\\path.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2793,7 +2778,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix\\unix_path.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix\\unix_path.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2808,7 +2793,7 @@
         }
       },
       "wbtest-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix\\unix_path_wbtest.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix\\unix_path_wbtest.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2823,7 +2808,7 @@
         }
       },
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix\\path_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix\\path_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2838,7 +2823,7 @@
         }
       },
       "mbt-md-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix\\README.mbt.md": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\posix\\README.mbt.md": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2883,7 +2868,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\path\\posix\\posix.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\path\\posix\\posix.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -2898,11 +2883,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32",
       "root": "moonbitlang/x",
       "rel": "path/win32",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32\\path.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32\\path.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2915,7 +2900,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32\\win_path.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32\\win_path.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2930,7 +2915,7 @@
         }
       },
       "wbtest-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32\\win_path_wbtest.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32\\win_path_wbtest.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2945,7 +2930,7 @@
         }
       },
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32\\path_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32\\path_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -2960,7 +2945,7 @@
         }
       },
       "mbt-md-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32\\README.mbt.md": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\path\\win32\\README.mbt.md": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3005,7 +2990,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\path\\win32\\win32.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\path\\win32\\win32.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -3020,11 +3005,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\rational",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\rational",
       "root": "moonbitlang/x",
       "rel": "rational",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\rational\\rational.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\rational\\rational.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3037,7 +3022,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\rational\\types.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\rational\\types.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3053,7 +3038,7 @@
       },
       "wbtest-files": {},
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\rational\\rational_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\rational\\rational_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3068,7 +3053,7 @@
         }
       },
       "mbt-md-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\rational\\README.mbt.md": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\rational\\README.mbt.md": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3133,7 +3118,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\quickcheck"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\rational\\rational.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\rational\\rational.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -3148,11 +3133,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\stack",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\stack",
       "root": "moonbitlang/x",
       "rel": "stack",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\stack\\deprecated.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\stack\\deprecated.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3165,7 +3150,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\stack\\stack.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\stack\\stack.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3178,7 +3163,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\stack\\types.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\stack\\types.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3195,7 +3180,7 @@
       "wbtest-files": {},
       "test-files": {},
       "mbt-md-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\stack\\README.mbt.md": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\stack\\README.mbt.md": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3235,7 +3220,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\stack\\stack.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\stack\\stack.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -3250,11 +3235,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\sys",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\sys",
       "root": "moonbitlang/x",
       "rel": "sys",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\sys.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\sys.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3270,7 +3255,7 @@
       },
       "wbtest-files": {},
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\sys_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\sys_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3294,7 +3279,7 @@
         {
           "path": "moonbitlang/x/sys/internal/ffi",
           "alias": "ffi",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\internal\\ffi"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\internal\\ffi"
         }
       ],
       "wbtest-deps": [
@@ -3311,7 +3296,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\sys\\sys.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\sys\\sys.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -3326,11 +3311,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\internal\\ffi",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\internal\\ffi",
       "root": "moonbitlang/x",
       "rel": "sys/internal/ffi",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\internal\\ffi\\sys_js.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\internal\\ffi\\sys_js.mbt": {
           "backend": [
             "Js"
           ],
@@ -3339,7 +3324,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\internal\\ffi\\sys_native.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\internal\\ffi\\sys_native.mbt": {
           "backend": [
             "Native",
             "LLVM"
@@ -3349,7 +3334,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\internal\\ffi\\sys_wasm.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\sys\\internal\\ffi\\sys_wasm.mbt": {
           "backend": [
             "Wasm",
             "WasmGC"
@@ -3372,7 +3357,7 @@
         {
           "path": "moonbitlang/x/internal/ffi",
           "alias": "common_ffi",
-          "fspath": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi"
+          "fspath": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\internal\\ffi"
         }
       ],
       "wbtest-deps": [
@@ -3389,7 +3374,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\sys\\internal\\ffi\\ffi.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\sys\\internal\\ffi\\ffi.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -3404,11 +3389,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time",
       "root": "moonbitlang/x",
       "rel": "time",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\duration.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\duration.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3421,7 +3406,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\errors.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\errors.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3434,7 +3419,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\period.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\period.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3447,7 +3432,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_date.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_date.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3460,7 +3445,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_date_time.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_date_time.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3473,7 +3458,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_time.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_time.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3486,7 +3471,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\util.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\util.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3499,7 +3484,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\weekday.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\weekday.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3512,7 +3497,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zone.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zone.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3525,7 +3510,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zone_offset.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zone_offset.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3538,7 +3523,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zoned_date_time.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zoned_date_time.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3553,7 +3538,7 @@
         }
       },
       "wbtest-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\duration_wbtest.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\duration_wbtest.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3566,7 +3551,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_date_time_wbtest.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_date_time_wbtest.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3579,7 +3564,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_date_wbtest.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_date_wbtest.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3592,7 +3577,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_time_wbtest.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_time_wbtest.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3605,7 +3590,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zone_wbtest.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zone_wbtest.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3620,7 +3605,7 @@
         }
       },
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\duration_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\duration_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3633,7 +3618,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\period_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\period_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3646,7 +3631,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_date_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_date_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3659,7 +3644,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_date_time_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_date_time_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3672,7 +3657,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_time_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\plain_time_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3685,7 +3670,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zone_offset_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zone_offset_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3698,7 +3683,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zone_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zone_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3711,7 +3696,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zoned_date_time_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\zoned_date_time_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3726,7 +3711,7 @@
         }
       },
       "mbt-md-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\README.mbt.md": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\time\\README.mbt.md": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3781,7 +3766,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\time\\time.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\time\\time.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
@@ -3796,11 +3781,11 @@
     {
       "is-main": false,
       "is-third-party": true,
-      "root-path": "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\uuid",
+      "root-path": "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\uuid",
       "root": "moonbitlang/x",
       "rel": "uuid",
       "files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\uuid\\ops.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\uuid\\ops.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3813,7 +3798,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\uuid\\uuid.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\uuid\\uuid.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3826,7 +3811,7 @@
             "Debug"
           ]
         },
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\uuid\\variant.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\uuid\\variant.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3842,7 +3827,7 @@
       },
       "wbtest-files": {},
       "test-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\uuid\\uuid_test.mbt": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\uuid\\uuid_test.mbt": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3857,7 +3842,7 @@
         }
       },
       "mbt-md-files": {
-        "E:\\projects\\moonbit\\moonchart\\.mooncakes\\moonbitlang\\x\\uuid\\README.mbt.md": {
+        "E:\\projects\\moonbit\\moonchart\\moonchart\\.mooncakes\\moonbitlang\\x\\uuid\\README.mbt.md": {
           "backend": [
             "Wasm",
             "WasmGC",
@@ -3892,7 +3877,7 @@
           "fspath": "C:\\Users\\JunJunTvT\\.moon\\lib\\core\\prelude"
         }
       ],
-      "artifact": "E:\\projects\\moonbit\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\uuid\\uuid.mi",
+      "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\.ide\\wasm-gc\\debug\\check\\.mooncakes\\moonbitlang\\x\\uuid\\uuid.mi",
       "check-command": null,
       "wbtest-check-command": null,
       "test-check-command": null,
