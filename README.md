@@ -261,6 +261,44 @@ render(opt : ChartOption) -> Result[String, String]     // Render a ChartOption 
 saveSvg(filename : String, svg : String) -> Result[Unit, String]  // Write SVG string to file
 ```
 
+## Running Examples
+
+The `examples/` directory contains ready-to-run chart demos. Each example is a standalone MoonBit package that generates an SVG file you can open in any browser.
+
+```bash
+# Run individual examples
+moon run examples/bar_chart        # Grouped bar chart with error bars → bar_chart.svg
+moon run examples/line_chart       # Multi-series line chart → line_chart.svg
+moon run examples/scatter_chart    # Scatter plot → scatter_chart.svg
+moon run examples/boxplot_chart    # Box plot → boxplot_chart.svg
+moon run examples/mixed_chart      # Bar + line mixed chart → mixed_chart.svg
+```
+
+Each command produces an SVG file in the current directory. Open the generated `.svg` file in your browser to view the chart.
+
+> **Tip:** All examples use `Chart::new()...save("output.svg")` to write directly to disk. For programmatic use, replace `.save(...)` with `.toSvg()` to get the SVG string.
+
+
+## Visualization
+
+In the `demo/` directory, you can launch a simple chart editor that includes all features of this project and lets you visualize the final SVG image in real time by adjusting parameters.
+
+Run the editor with the following command:
+
+
+```bash
+# Start a local HTTP server in the demo directory
+cd demo
+python -m http.server 8080
+```
+
+Then open **http://localhost:8080** in your browser.
+
+
+
+
+![Demo Gallery](figs/visualization.png)
+
 ## WASM Usage
 
 MoonChart can be compiled to WASM-GC for browser use. A dedicated WASM module is provided at `wasm/wasm_api.mbt` that exposes a single function:
