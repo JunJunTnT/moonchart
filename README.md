@@ -35,9 +35,9 @@ MoonChart delivers **sub-millisecond** SVG rendering via WASM — 500x faster th
 
 | Library | Mean Render Time | Speedup (vs matplotlib) |
 |---------|-----------------|--------------------------|
-| **MoonChart (WASM)** | **98.3 μs** | **501×** |
-| ECharts (SSR) | 1.97 ms | 25× |
-| matplotlib (Agg) | 49.2 ms | 1× |
+| **MoonChart** | **98.3 μs** | **501×** |
+| ECharts | 1.97 ms | 25× |
+| matplotlib | 49.2 ms | 1× |
 
 
 ## Quick Start
