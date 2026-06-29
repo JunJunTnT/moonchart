@@ -9,13 +9,13 @@
 //   "moonbitlang/x@0.4.6",
 // }
 
-name = "JunJunTvT/moonchart"
+name = "JunJunTnT/moonchart"
 
 version = "0.1.0"
 
 readme = "README.md"
 
-repository = "https://github.com/JunJunTvT/moonchart"
+repository = "https://github.com/JunJunTnT/moonchart"
 
 license = "Apache-2.0"
 

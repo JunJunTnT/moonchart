@@ -2,20 +2,20 @@
 
 **MoonChart** is an SVG charting library written in MoonBit. It produces vector graphics suitable for scientific and statistical plotting — bar charts, line charts, scatter plots, and box plots — with error bars, multi-series rendering, and extensive style controls. Output is an SVG string that can be saved to a file or rendered in a browser via WASM.
 
-Package: `JunJunTvT/moonchart`
-Repository: https://github.com/JunJunTvT/moonchart
+Package: `JunJunTnT/moonchart`
+Repository: https://github.com/JunJunTnT/moonchart
 License: Apache-2.0
 
 ## Installation
 
 ```bash
-moon add JunJunTvT/moonchart
+moon add JunJunTnT/moonchart
 ```
 
 Then import it in your MoonBit source:
 
 ```moonbit
-import "JunJunTvT/moonchart"
+import "JunJunTnT/moonchart"
 ```
 
 ## Simple Demo

@@ -1,5 +1,5 @@
 import {
-  "JunJunTvT/moonchart" @moonchart,
+  "JunJunTnT/moonchart" @moonchart,
 }
 
 options(

@@ -1,42 +1,42 @@
 {
   "packages": [
     {
-      "root": "JunJunTvT/moonchart",
+      "root": "JunJunTnT/moonchart",
       "rel": "",
       "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\wasm-gc\\debug\\build\\moonchart.mi"
     },
     {
-      "root": "JunJunTvT/moonchart",
+      "root": "JunJunTnT/moonchart",
       "rel": "cmd/main",
       "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\wasm-gc\\debug\\build\\cmd\\main\\main.mi"
     },
     {
-      "root": "JunJunTvT/moonchart",
+      "root": "JunJunTnT/moonchart",
       "rel": "examples/bar_chart",
       "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\wasm-gc\\debug\\build\\examples\\bar_chart\\bar_chart.mi"
     },
     {
-      "root": "JunJunTvT/moonchart",
+      "root": "JunJunTnT/moonchart",
       "rel": "examples/boxplot_chart",
       "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\wasm-gc\\debug\\build\\examples\\boxplot_chart\\boxplot_chart.mi"
     },
     {
-      "root": "JunJunTvT/moonchart",
+      "root": "JunJunTnT/moonchart",
       "rel": "examples/line_chart",
       "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\wasm-gc\\debug\\build\\examples\\line_chart\\line_chart.mi"
     },
     {
-      "root": "JunJunTvT/moonchart",
+      "root": "JunJunTnT/moonchart",
       "rel": "examples/mixed_chart",
       "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\wasm-gc\\debug\\build\\examples\\mixed_chart\\mixed_chart.mi"
     },
     {
-      "root": "JunJunTvT/moonchart",
+      "root": "JunJunTnT/moonchart",
       "rel": "examples/scatter_chart",
       "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\wasm-gc\\debug\\build\\examples\\scatter_chart\\scatter_chart.mi"
     },
     {
-      "root": "JunJunTvT/moonchart",
+      "root": "JunJunTnT/moonchart",
       "rel": "wasm",
       "artifact": "E:\\projects\\moonbit\\moonchart\\moonchart\\_build\\wasm-gc\\debug\\build\\wasm\\wasm.mi"
     },

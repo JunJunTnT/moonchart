@@ -1,6 +1,6 @@
 {
   "import": [
-    { "path": "JunJunTvT/moonchart", "alias": "moonchart" },
+    { "path": "JunJunTnT/moonchart", "alias": "moonchart" },
     { "path": "moonbitlang/x/json5", "alias": "json5" }
   ],
   "link": {
