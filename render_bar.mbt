@@ -1,7 +1,12 @@
 // Bar chart rendering.
 
+///|
 /// Render all bar series into SVG strings. Parameters: `layout` - chart layout, `opt` - chart options, `seriesIndex` - index of the series to render.
-pub fn renderBars(layout : Layout, opt : ChartOption, seriesIndex : Int) -> String {
+pub fn renderBars(
+  layout : Layout,
+  opt : ChartOption,
+  seriesIndex : Int,
+) -> String {
   let series = opt.series[seriesIndex]
   let color = match series.color {
     Some(c) => c
@@ -14,7 +19,9 @@ pub fn renderBars(layout : Layout, opt : ChartOption, seriesIndex : Int) -> Stri
   for i = 0; i < series.data.length(); i = i + 1 {
     let dp = series.data[i]
     let centerX = plot.left() + layout.xScale.bandCenter(dp.x)
-    let barX = centerX + layout.dodgeOffsets[seriesIndex] - layout.barWidth / 2.0
+    let barX = centerX +
+      layout.dodgeOffsets[seriesIndex] -
+      layout.barWidth / 2.0
 
     // Y position: invert for SVG coordinate system
     let yVal = dp.y
@@ -31,15 +38,17 @@ pub fn renderBars(layout : Layout, opt : ChartOption, seriesIndex : Int) -> Stri
       Some(c) => c.toSvg()
       None => "none"
     }
-    svg = svg + rect(
-      x= barX,
-      y= barY,
-      w= layout.barWidth,
-      h= barH,
-      fill= fill,
-      stroke= barStroke,
-      strokeWidth= series.barStrokeWidth,
-    ) + "\n"
+    svg = svg +
+      rect(
+        x=barX,
+        y=barY,
+        w=layout.barWidth,
+        h=barH,
+        fill~,
+        stroke=barStroke,
+        strokeWidth=series.barStrokeWidth,
+      ) +
+      "\n"
   }
 
   svg

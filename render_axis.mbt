@@ -1,5 +1,6 @@
 // Axis rendering: draws axes, ticks, labels, titles, and grid lines.
 
+///|
 /// Build a font from axis option settings.
 fn tickFontFrom(axis : AxisOption, fontFamily : String) -> Font {
   {
@@ -12,6 +13,8 @@ fn tickFontFrom(axis : AxisOption, fontFamily : String) -> Font {
 }
 
 // Build a label font from axis option settings using the given font family.
+
+///|
 fn labelFontFrom(axis : AxisOption, fontFamily : String) -> Font {
   {
     family: fontFamily,
@@ -22,6 +25,7 @@ fn labelFontFrom(axis : AxisOption, fontFamily : String) -> Font {
   }
 }
 
+///|
 /// Render the Y-axis (left side of plot area). `layout` provides plot and scale geometry; `opt` provides axis styling.
 pub fn renderYAxis(layout : Layout, opt : ChartOption) -> String {
   let plot = layout.plot
@@ -32,11 +36,16 @@ pub fn renderYAxis(layout : Layout, opt : ChartOption) -> String {
   let mut svg = ""
 
   // Y-axis line (vertical)
-  svg = svg + line(
-    x1= plot.left(), y1= plot.top(),
-    x2= plot.left(), y2= plot.bottom(),
-    stroke= axisColorStr, strokeWidth= 1.0,
-  ) + "\n"
+  svg = svg +
+    line(
+      x1=plot.left(),
+      y1=plot.top(),
+      x2=plot.left(),
+      y2=plot.bottom(),
+      stroke=axisColorStr,
+      strokeWidth=1.0,
+    ) +
+    "\n"
 
   // Y-axis ticks
   let tickCount = match axis.tickCount {
@@ -51,27 +60,39 @@ pub fn renderYAxis(layout : Layout, opt : ChartOption) -> String {
 
     // Grid line (horizontal across plot area)
     if axis.gridLine {
-      svg = svg + line(
-        x1= plot.left(), y1= yPos,
-        x2= plot.right(), y2= yPos,
-        stroke= axis.gridColor.toSvg(), strokeWidth= axis.gridWidth,
-      ) + "\n"
+      svg = svg +
+        line(
+          x1=plot.left(),
+          y1=yPos,
+          x2=plot.right(),
+          y2=yPos,
+          stroke=axis.gridColor.toSvg(),
+          strokeWidth=axis.gridWidth,
+        ) +
+        "\n"
     }
 
     // Tick line
-    svg = svg + line(
-      x1= plot.left() - tickLength, y1= yPos,
-      x2= plot.left(), y2= yPos,
-      stroke= axisColorStr, strokeWidth= 1.0,
-    ) + "\n"
+    svg = svg +
+      line(
+        x1=plot.left() - tickLength,
+        y1=yPos,
+        x2=plot.left(),
+        y2=yPos,
+        stroke=axisColorStr,
+        strokeWidth=1.0,
+      ) +
+      "\n"
     // Tick label
-    svg = svg + text(
-      x= plot.left() - tickLength - 4.0,
-      y= yPos + tickFontVal.size * 0.35,
-      content= label,
-      font= tickFontVal,
-      textAnchor= "end",
-    ) + "\n"
+    svg = svg +
+      text(
+        x=plot.left() - tickLength - 4.0,
+        y=yPos + tickFontVal.size * 0.35,
+        content=label,
+        font=tickFontVal,
+        textAnchor="end",
+      ) +
+      "\n"
   }
 
   // Y-axis title
@@ -79,11 +100,10 @@ pub fn renderYAxis(layout : Layout, opt : ChartOption) -> String {
     Some(label) => {
       let titleFontVal = labelFontFrom(axis, opt.fontFamily)
       let centerY = plot.centerY()
-      let xPos = plot.left() / 2.0  // center of left margin
-      svg = svg + rotatedText(
-        x= xPos, y= centerY,
-        content= label, font= titleFontVal,
-      ) + "\n"
+      let xPos = plot.left() / 2.0 // center of left margin
+      svg = svg +
+        rotatedText(x=xPos, y=centerY, content=label, font=titleFontVal) +
+        "\n"
     }
     None => ()
   }
@@ -91,6 +111,7 @@ pub fn renderYAxis(layout : Layout, opt : ChartOption) -> String {
   svg
 }
 
+///|
 /// Render the X-axis (bottom of plot area). `layout` provides plot and scale geometry; `opt` provides axis styling.
 pub fn renderXAxis(layout : Layout, opt : ChartOption) -> String {
   let plot = layout.plot
@@ -101,11 +122,16 @@ pub fn renderXAxis(layout : Layout, opt : ChartOption) -> String {
   let mut svg = ""
 
   // X-axis line (horizontal)
-  svg = svg + line(
-    x1= plot.left(), y1= plot.bottom(),
-    x2= plot.right(), y2= plot.bottom(),
-    stroke= axisColorStr, strokeWidth= 1.0,
-  ) + "\n"
+  svg = svg +
+    line(
+      x1=plot.left(),
+      y1=plot.bottom(),
+      x2=plot.right(),
+      y2=plot.bottom(),
+      stroke=axisColorStr,
+      strokeWidth=1.0,
+    ) +
+    "\n"
 
   // X-axis ticks
   let tickCount = match axis.tickCount {
@@ -120,27 +146,39 @@ pub fn renderXAxis(layout : Layout, opt : ChartOption) -> String {
 
     // Grid line (vertical across plot area)
     if axis.gridLine {
-      svg = svg + line(
-        x1= xPos, y1= plot.top(),
-        x2= xPos, y2= plot.bottom(),
-        stroke= axis.gridColor.toSvg(), strokeWidth= axis.gridWidth,
-      ) + "\n"
+      svg = svg +
+        line(
+          x1=xPos,
+          y1=plot.top(),
+          x2=xPos,
+          y2=plot.bottom(),
+          stroke=axis.gridColor.toSvg(),
+          strokeWidth=axis.gridWidth,
+        ) +
+        "\n"
     }
 
     // Tick line
-    svg = svg + line(
-      x1= xPos, y1= plot.bottom(),
-      x2= xPos, y2= plot.bottom() + tickLength,
-      stroke= axisColorStr, strokeWidth= 1.0,
-    ) + "\n"
+    svg = svg +
+      line(
+        x1=xPos,
+        y1=plot.bottom(),
+        x2=xPos,
+        y2=plot.bottom() + tickLength,
+        stroke=axisColorStr,
+        strokeWidth=1.0,
+      ) +
+      "\n"
     // Tick label
-    svg = svg + text(
-      x= xPos,
-      y= plot.bottom() + tickLength + tickFontVal.size + 2.0,
-      content= label,
-      font= tickFontVal,
-      textAnchor= "middle",
-    ) + "\n"
+    svg = svg +
+      text(
+        x=xPos,
+        y=plot.bottom() + tickLength + tickFontVal.size + 2.0,
+        content=label,
+        font=tickFontVal,
+        textAnchor="middle",
+      ) +
+      "\n"
   }
 
   // X-axis title
@@ -148,12 +186,20 @@ pub fn renderXAxis(layout : Layout, opt : ChartOption) -> String {
     Some(label) => {
       let titleFontVal = labelFontFrom(axis, opt.fontFamily)
       let centerX = plot.centerX()
-      let yPos = plot.bottom() + tickLength + tickFontVal.size + titleFontVal.size + 6.0
-      svg = svg + text(
-        x= centerX, y= yPos,
-        content= label, font= titleFontVal,
-        textAnchor= "middle",
-      ) + "\n"
+      let yPos = plot.bottom() +
+        tickLength +
+        tickFontVal.size +
+        titleFontVal.size +
+        6.0
+      svg = svg +
+        text(
+          x=centerX,
+          y=yPos,
+          content=label,
+          font=titleFontVal,
+          textAnchor="middle",
+        ) +
+        "\n"
     }
     None => ()
   }
@@ -161,6 +207,7 @@ pub fn renderXAxis(layout : Layout, opt : ChartOption) -> String {
   svg
 }
 
+///|
 /// Render the chart title (centered at top). `opt` provides the title text and chart dimensions.
 pub fn renderTitle(opt : ChartOption) -> String {
   match opt.title {
@@ -168,11 +215,7 @@ pub fn renderTitle(opt : ChartOption) -> String {
       let fontVal = titleFont()
       let centerX = opt.width / 2.0
       let yPos = opt.margin.top / 2.0 + fontVal.size * 0.35
-      text(
-        x= centerX, y= yPos,
-        content= title, font= fontVal,
-        textAnchor= "middle",
-      )
+      text(x=centerX, y=yPos, content=title, font=fontVal, textAnchor="middle")
     }
     None => ""
   }

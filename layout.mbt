@@ -1,6 +1,7 @@
 // Layout engine: computes plot area, scales, and positioning.
 // Uses Result type for error handling.
 
+///|
 /// A rectangle in pixel space.
 pub struct Rect {
   x : Double
@@ -9,36 +10,43 @@ pub struct Rect {
   h : Double
 }
 
+///|
 /// Left edge.
 pub fn Rect::left(self : Rect) -> Double {
   self.x
 }
 
+///|
 /// Right edge.
 pub fn Rect::right(self : Rect) -> Double {
   self.x + self.w
 }
 
+///|
 /// Top edge.
 pub fn Rect::top(self : Rect) -> Double {
   self.y
 }
 
+///|
 /// Bottom edge.
 pub fn Rect::bottom(self : Rect) -> Double {
   self.y + self.h
 }
 
+///|
 /// Center X.
 pub fn Rect::centerX(self : Rect) -> Double {
   self.x + self.w / 2.0
 }
 
+///|
 /// Center Y.
 pub fn Rect::centerY(self : Rect) -> Double {
   self.y + self.h / 2.0
 }
 
+///|
 /// Layout result: everything renderers need.
 pub struct Layout {
   /// The chart canvas rectangle (full SVG viewport).
@@ -55,6 +63,7 @@ pub struct Layout {
   barWidth : Double
 }
 
+///|
 /// Compute the layout from a ChartOption.
 /// Returns Result: Ok(Layout) on success, Err(message) on failure.
 pub fn computeLayout(opt : ChartOption) -> Result[Layout, String] {
@@ -62,7 +71,10 @@ pub fn computeLayout(opt : ChartOption) -> Result[Layout, String] {
   let canvas = Rect::{ x: 0.0, y: 0.0, w: opt.width, h: opt.height }
 
   // Determine plot area with dynamic margins (user margin acts as minimum)
-  let plotLeft = max(opt.margin.left, opt.yAxis.tickFontSize * 4.0 + opt.yAxis.labelFontSize + 10.0)
+  let plotLeft = max(
+    opt.margin.left,
+    opt.yAxis.tickFontSize * 4.0 + opt.yAxis.labelFontSize + 10.0,
+  )
   let plotRight = opt.width - opt.margin.right
   // Top margin: account for title
   let titleMargin = match opt.title {
@@ -76,12 +88,15 @@ pub fn computeLayout(opt : ChartOption) -> Result[Layout, String] {
     Some(_) => opt.xAxis.labelFontSize + 4.0
     None => 0.0
   }
-  let plotBottom = opt.height - max(opt.margin.bottom, xTickSpace + xLabelSpace + 10.0)
+  let plotBottom = opt.height -
+    max(opt.margin.bottom, xTickSpace + xLabelSpace + 10.0)
   let plotW = plotRight - plotLeft
   let plotH = plotBottom - plotTop
 
   if plotW <= 0.0 || plotH <= 0.0 {
-    return Err("Plot area too small: width=\{plotW.to_string()}, height=\{plotH.to_string()}")
+    return Err(
+      "Plot area too small: width=\{plotW.to_string()}, height=\{plotH.to_string()}",
+    )
   }
 
   let plot = Rect::{ x: plotLeft, y: plotTop, w: plotW, h: plotH }
@@ -93,10 +108,8 @@ pub fn computeLayout(opt : ChartOption) -> Result[Layout, String] {
   let xScale = CategoryScale::new(xTicks, xLabels, plotW)
 
   // Build y scale from yAxis
-  let yScale = match opt.yAxis.kind {
-    Linear(min, max) => LinearScale::new(min, max, plotH)
-    _ => LinearScale::new(0.0, 100.0, plotH)
-  }
+  let Linear(yMin, yMax) = opt.yAxis.kind
+  let yScale = LinearScale::new(yMin, yMax, plotH)
 
   // Compute dodge offsets — for Bar and BoxPlot series
   let nDodged = countDodgedSeries(opt.series)
@@ -110,7 +123,8 @@ pub fn computeLayout(opt : ChartOption) -> Result[Layout, String] {
   let dodgeValues : Array[Double] = []
   if nDodged > 1 {
     let step = barWidth * (1.0 + opt.barGap)
-    let totalWidth = barWidth * nDodged.to_double() + barWidth * opt.barGap * (nDodged.to_double() - 1.0)
+    let totalWidth = barWidth * nDodged.to_double() +
+      barWidth * opt.barGap * (nDodged.to_double() - 1.0)
     let startOffset = -totalWidth / 2.0 + barWidth / 2.0
     for i = 0; i < nDodged; i = i + 1 {
       dodgeValues.push(startOffset + i.to_double() * step)
@@ -136,16 +150,10 @@ pub fn computeLayout(opt : ChartOption) -> Result[Layout, String] {
     }
   }
 
-  Ok({
-    canvas,
-    plot,
-    xScale,
-    yScale,
-    dodgeOffsets,
-    barWidth,
-  })
+  Ok({ canvas, plot, xScale, yScale, dodgeOffsets, barWidth })
 }
 
+///|
 /// Build X-axis tick positions and labels from options or auto-inference.
 fn buildXTicks(opt : ChartOption) -> (Array[Double], Array[String]) {
   // Use explicit ticks if provided
@@ -168,6 +176,7 @@ fn buildXTicks(opt : ChartOption) -> (Array[Double], Array[String]) {
   autoInferXTicks(opt.series)
 }
 
+///|
 /// Auto-infer X tick positions and labels from all series data.
 fn autoInferXTicks(series : Array[Series]) -> (Array[Double], Array[String]) {
   if series.length() == 0 {
@@ -209,6 +218,7 @@ fn autoInferXTicks(series : Array[Series]) -> (Array[Double], Array[String]) {
   (xVals, labels)
 }
 
+///|
 /// Check if array contains a double (approximate equality).
 fn containsD(arr : Array[Double], val : Double) -> Bool {
   for i = 0; i < arr.length(); i = i + 1 {
@@ -219,6 +229,7 @@ fn containsD(arr : Array[Double], val : Double) -> Bool {
   false
 }
 
+///|
 /// Sort an array of doubles (bubble sort for small arrays).
 fn sortDoubles(arr : Array[Double]) -> Unit {
   for i = 0; i < arr.length(); i = i + 1 {
@@ -232,6 +243,7 @@ fn sortDoubles(arr : Array[Double]) -> Unit {
   }
 }
 
+///|
 /// Format a position value to a label string.
 fn formatPosLabel(value : Double) -> String {
   if value == Double::round(value) {
@@ -241,11 +253,17 @@ fn formatPosLabel(value : Double) -> String {
   }
 }
 
+///|
 /// Max of two Double values (no Prelude max for Double).
 fn max(a : Double, b : Double) -> Double {
-  if a > b { a } else { b }
+  if a > b {
+    a
+  } else {
+    b
+  }
 }
 
+///|
 /// Count Bar and BoxPlot series (for dodge calculation).
 fn countDodgedSeries(series : Array[Series]) -> Int {
   let mut count = 0

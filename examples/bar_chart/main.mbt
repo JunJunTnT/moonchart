@@ -1,5 +1,7 @@
 // Example: Grouped bar chart with error bars.
 // Run: moon run examples/bar_chart
+
+///|
 fn main {
   let ctrlData = [
     @moonchart.DataPoint::withErrY(0.0, 45.0, 3.0),
@@ -16,7 +18,9 @@ fn main {
 
   let svg = @moonchart.Chart::new()
     .title("Cell Viability After Treatment")
-    .xTicks([0.0, 1.0, 2.0, 3.0], ["Control", "Low Dose", "Med Dose", "High Dose"])
+    .xTicks([0.0, 1.0, 2.0, 3.0], [
+      "Control", "Low Dose", "Med Dose", "High Dose",
+    ])
     .xLabel("Treatment Group")
     .yLabel("Viability (%)")
     .yRange(0.0, 100.0)

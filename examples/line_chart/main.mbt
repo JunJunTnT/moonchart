@@ -1,5 +1,7 @@
 // Example: Multi-series line chart with point markers and custom colors.
 // Run: moon run examples/line_chart
+
+///|
 fn main {
   let seriesA = [
     @moonchart.DataPoint::new(0.0, 100.0),
@@ -24,10 +26,18 @@ fn main {
     .xLabel("Time")
     .yLabel("Concentration (ng/mL)")
     .yRange(0.0, 110.0)
-    .series(@moonchart.Series::line("Drug A", seriesA).withColor(@moonchart.Color::rgb(0, 122, 184)))
-    .series(@moonchart.Series::line("Drug B", seriesB).withColor(@moonchart.Color::rgb(212, 57, 57)))
+    .series(
+      @moonchart.Series::line("Drug A", seriesA).withColor(
+        @moonchart.Color::rgb(0, 122, 184),
+      ),
+    )
+    .series(
+      @moonchart.Series::line("Drug B", seriesB).withColor(
+        @moonchart.Color::rgb(212, 57, 57),
+      ),
+    )
     .save("line_chart.svg")
-    
+
   match svg {
     Ok(s) => println(s)
     Err(e) => println("Error: \{e}")

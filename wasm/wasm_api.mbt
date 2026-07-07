@@ -1,12 +1,11 @@
 // WASM API exports for moonchart.
 // Uses JSON-in/JSON-out pattern to bridge JS ↔ WASM.
 
+///|
 /// Main WASM export: takes a JSON config string, returns an SVG string.
 /// On error, returns a string starting with "Error:".
 pub fn render_chart(config_json : String) -> String {
-  let json = try {
-    @json5.parse(config_json)
-  } catch {
+  let json = @json5.parse(config_json) catch {
     e => return "Error: JSON parse failed: \{e.to_string()}"
   }
 
@@ -18,7 +17,11 @@ pub fn render_chart(config_json : String) -> String {
   // ── Extract top-level config ──
   let width = getNum(root_obj, "width", 600.0)
   let height = getNum(root_obj, "height", 400.0)
-  let bg = getColor(root_obj, "background", @moonchart.Color::rgb(255, 255, 255))
+  let bg = getColor(
+    root_obj,
+    "background",
+    @moonchart.Color::rgb(255, 255, 255),
+  )
   let title = getStrOpt(root_obj, "title")
   let x_label = getStrOpt(root_obj, "xLabel")
   let y_label = getStrOpt(root_obj, "yLabel")
@@ -27,7 +30,9 @@ pub fn render_chart(config_json : String) -> String {
   let x_tick_positions = getNumArray(root_obj, "xTickPositions")
   let x_tick_labels = getStrArray(root_obj, "xTickLabels")
   let show_legend = getBool(root_obj, "showLegend", false)
-  let legend_pos = parseLegendPos(getStr(root_obj, "legendPosition", "topRight"))
+  let legend_pos = parseLegendPos(
+    getStr(root_obj, "legendPosition", "topRight"),
+  )
   let show_y_grid = getBool(root_obj, "showYGrid", false)
   let show_x_grid = getBool(root_obj, "showXGrid", false)
   let bar_width_ratio = getNum(root_obj, "barWidthRatio", 0.7)
@@ -93,6 +98,7 @@ pub fn render_chart(config_json : String) -> String {
 
 // ──── JSON helpers (use pattern matching via `is` syntax) ────
 
+///|
 fn getStr(json : Map[String, Json], key : String, default : String) -> String {
   match json.get(key) {
     Some(String(s)) => s
@@ -100,13 +106,15 @@ fn getStr(json : Map[String, Json], key : String, default : String) -> String {
   }
 }
 
-fn getStrOpt(json : Map[String, Json], key : String) -> Option[String] {
+///|
+fn getStrOpt(json : Map[String, Json], key : String) -> String? {
   match json.get(key) {
     Some(String(s)) => Some(s)
     _ => None
   }
 }
 
+///|
 fn getNum(json : Map[String, Json], key : String, default : Double) -> Double {
   match json.get(key) {
     Some(Number(n, ..)) => n
@@ -114,6 +122,7 @@ fn getNum(json : Map[String, Json], key : String, default : Double) -> Double {
   }
 }
 
+///|
 fn getBool(json : Map[String, Json], key : String, default : Bool) -> Bool {
   match json.get(key) {
     Some(True) => true
@@ -122,6 +131,7 @@ fn getBool(json : Map[String, Json], key : String, default : Bool) -> Bool {
   }
 }
 
+///|
 fn getArray(json : Map[String, Json], key : String) -> Array[Json] {
   match json.get(key) {
     Some(Array(a)) => a
@@ -129,6 +139,7 @@ fn getArray(json : Map[String, Json], key : String) -> Array[Json] {
   }
 }
 
+///|
 fn getStrArray(json : Map[String, Json], key : String) -> Array[String] {
   let raw = getArray(json, key)
   let result : Array[String] = []
@@ -141,6 +152,7 @@ fn getStrArray(json : Map[String, Json], key : String) -> Array[String] {
   result
 }
 
+///|
 fn getNumArray(json : Map[String, Json], key : String) -> Array[Double] {
   let raw = getArray(json, key)
   let result : Array[Double] = []
@@ -153,7 +165,12 @@ fn getNumArray(json : Map[String, Json], key : String) -> Array[Double] {
   result
 }
 
-fn getColor(json : Map[String, Json], key : String, default : @moonchart.Color) -> @moonchart.Color {
+///|
+fn getColor(
+  json : Map[String, Json],
+  key : String,
+  default : @moonchart.Color,
+) -> @moonchart.Color {
   match json.get(key) {
     Some(String(hex)) => hexToColor(hex)
     _ => default
@@ -162,9 +179,10 @@ fn getColor(json : Map[String, Json], key : String, default : @moonchart.Color) 
 
 // ──── Color parsing ────
 
+///|
 fn hexToColor(hex : String) -> @moonchart.Color {
   let s = if hex.length() > 0 && hex[0:1] == "#" {
-    hex[1:].to_string()
+    hex[1:].to_owned()
   } else {
     hex
   }
@@ -174,6 +192,7 @@ fn hexToColor(hex : String) -> @moonchart.Color {
   @moonchart.Color::rgb(r, g, b)
 }
 
+///|
 fn parseHexByte(s : String, offset : Int) -> Int {
   if offset + 2 > s.length() {
     0
@@ -184,6 +203,7 @@ fn parseHexByte(s : String, offset : Int) -> Int {
   }
 }
 
+///|
 fn hexVal(c : UInt16) -> Int {
   let code = c.to_int()
   if code >= 48 && code <= 57 {
@@ -199,37 +219,62 @@ fn hexVal(c : UInt16) -> Int {
 
 // ──── Legend position ────
 
+///|
 fn parseLegendPos(s : String) -> @moonchart.Position {
-  if s == "topLeft" { @moonchart.TopLeft }
-  else if s == "topRight" { @moonchart.TopRight }
-  else if s == "topCenter" { @moonchart.TopCenter }
-  else if s == "bottomLeft" { @moonchart.BottomLeft }
-  else if s == "bottomRight" { @moonchart.BottomRight }
-  else if s == "bottomCenter" { @moonchart.BottomCenter }
-  else if s == "left" { @moonchart.Left }
-  else if s == "right" { @moonchart.Right }
-  else { @moonchart.TopRight }
+  if s == "topLeft" {
+    @moonchart.TopLeft
+  } else if s == "topRight" {
+    @moonchart.TopRight
+  } else if s == "topCenter" {
+    @moonchart.TopCenter
+  } else if s == "bottomLeft" {
+    @moonchart.BottomLeft
+  } else if s == "bottomRight" {
+    @moonchart.BottomRight
+  } else if s == "bottomCenter" {
+    @moonchart.BottomCenter
+  } else if s == "left" {
+    @moonchart.Left
+  } else if s == "right" {
+    @moonchart.Right
+  } else {
+    @moonchart.TopRight
+  }
 }
 
 // ──── Style parsing ────
 
+///|
 fn parseLineStyle(s : String) -> @moonchart.LineStyle {
-  if s == "dashed" { @moonchart.Dashed }
-  else if s == "dotted" { @moonchart.Dotted }
-  else if s == "dashDot" { @moonchart.DashDot }
-  else { @moonchart.Solid }
+  if s == "dashed" {
+    @moonchart.Dashed
+  } else if s == "dotted" {
+    @moonchart.Dotted
+  } else if s == "dashDot" {
+    @moonchart.DashDot
+  } else {
+    @moonchart.Solid
+  }
 }
 
+///|
 fn parsePointShape(s : String) -> @moonchart.PointShape {
-  if s == "square" { @moonchart.Square }
-  else if s == "triangle" { @moonchart.Triangle }
-  else if s == "diamond" { @moonchart.Diamond }
-  else if s == "cross" { @moonchart.Cross }
-  else { @moonchart.Circle }
+  if s == "square" {
+    @moonchart.Square
+  } else if s == "triangle" {
+    @moonchart.Triangle
+  } else if s == "diamond" {
+    @moonchart.Diamond
+  } else if s == "cross" {
+    @moonchart.Cross
+  } else {
+    @moonchart.Circle
+  }
 }
 
 // ──── Series builder ────
 
+///|
 fn buildSeries(so : Map[String, Json]) -> @moonchart.Series {
   let name = getStr(so, "name", "Series")
   let chart_type_str = getStr(so, "chartType", "bar")
@@ -272,7 +317,8 @@ fn buildSeries(so : Map[String, Json]) -> @moonchart.Series {
 
   // Bar stroke
   let s = match so.get("barStroke") {
-    Some(String(hex)) => s.withBarStroke(hexToColor(hex), getNum(so, "barStrokeWidth", 0.0))
+    Some(String(hex)) =>
+      s.withBarStroke(hexToColor(hex), getNum(so, "barStrokeWidth", 0.0))
     _ => s
   }
 
@@ -296,11 +342,12 @@ fn buildSeries(so : Map[String, Json]) -> @moonchart.Series {
   }
 }
 
+///|
 fn parseDataPoints(arr : Array[Json]) -> Array[@moonchart.DataPoint] {
   let result : Array[@moonchart.DataPoint] = []
   for i = 0; i < arr.length(); i = i + 1 {
     match arr[i] {
-      Array(inner) => {
+      Array(inner) =>
         if inner.length() >= 2 {
           let x = getJsonNum(inner, 0, 0.0)
           let y = getJsonNum(inner, 1, 0.0)
@@ -311,13 +358,13 @@ fn parseDataPoints(arr : Array[Json]) -> Array[@moonchart.DataPoint] {
             result.push(@moonchart.DataPoint::new(x, y))
           }
         }
-      }
       _ => ()
     }
   }
   result
 }
 
+///|
 fn parseBoxGroups(arr : Array[Json]) -> Array[@moonchart.BoxGroup] {
   let result : Array[@moonchart.BoxGroup] = []
   for i = 0; i < arr.length(); i = i + 1 {
@@ -343,6 +390,7 @@ fn parseBoxGroups(arr : Array[Json]) -> Array[@moonchart.BoxGroup] {
   result
 }
 
+///|
 fn getJsonNum(arr : Array[Json], idx : Int, default : Double) -> Double {
   match arr[idx] {
     Number(n, ..) => n

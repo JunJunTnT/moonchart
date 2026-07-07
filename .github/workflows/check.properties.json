@@ -1,0 +1,5 @@
+{
+  "name": "MoonBit Check Workflow",
+  "description": "MoonBit Organization CI Workflow Template",
+  "filePatterns": ["moon.mod.json", "moon.pkg.json", "README.mbt.md"]
+}

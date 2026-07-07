@@ -19,7 +19,7 @@ repository = "https://github.com/JunJunTnT/moonchart"
 
 license = "Apache-2.0"
 
-keywords = ["chart", "plot", "svg", "visualization", "statistics", "science"]
+keywords = [ "chart", "plot", "svg", "visualization", "statistics", "science" ]
 
 description = "A statistical chart SVG generation library for MoonBit. Supports bar charts, line charts, scatter plots with error bars and multi-series rendering."
 

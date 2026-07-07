@@ -1,4 +1,4 @@
 import {
-  "moonbitlang/core/math" @math,
-  "moonbitlang/x/fs" @fs,
+  "moonbitlang/core/math",
+  "moonbitlang/x/fs",
 }

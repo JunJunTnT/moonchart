@@ -1,0 +1,5 @@
+{
+  "name": "MoonBit Setup for Copilot Workflow",
+  "description": "MoonBit Organization CI Workflow Template : Setup for Copilot",
+  "filePatterns": ["moon.mod.json", "moon.pkg.json", "README.mbt.md"]
+}

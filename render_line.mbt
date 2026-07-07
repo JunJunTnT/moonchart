@@ -1,7 +1,12 @@
 // Line chart rendering with point shape and line style support.
 
+///|
 /// Render a line series into SVG given layout, chart options, and series index.
-pub fn renderLine(layout : Layout, opt : ChartOption, seriesIndex : Int) -> String {
+pub fn renderLine(
+  layout : Layout,
+  opt : ChartOption,
+  seriesIndex : Int,
+) -> String {
   let series = opt.series[seriesIndex]
   let color = match series.color {
     Some(c) => c
@@ -37,7 +42,9 @@ pub fn renderLine(layout : Layout, opt : ChartOption, seriesIndex : Int) -> Stri
   if pts.length() >= 2 {
     let ptsStr = formatPoints(pts)
     let dash = lineDashAttr(series.lineStyle)
-    svg = svg + "<polyline points='\{ptsStr}' stroke='\{stroke}' stroke-width='\{lineWidth}' fill='none' stroke-linejoin='round' stroke-linecap='round'\{dash} />" + "\n"
+    svg = svg +
+      "<polyline points='\{ptsStr}' stroke='\{stroke}' stroke-width='\{lineWidth}' fill='none' stroke-linejoin='round' stroke-linecap='round'\{dash} />" +
+      "\n"
   }
 
   // Draw data point markers — use continuous mapping
@@ -50,13 +57,16 @@ pub fn renderLine(layout : Layout, opt : ChartOption, seriesIndex : Int) -> Stri
       let dp = sorted[i]
       let cx = plot.left() + layout.xScale.map(dp.x)
       let cy = plot.bottom() - layout.yScale.map(dp.y)
-      svg = svg + pointMarker(cx, cy, pointSize, series.pointShape, ptFill) + "\n"
+      svg = svg +
+        pointMarker(cx, cy, pointSize, series.pointShape, ptFill) +
+        "\n"
     }
   }
 
   svg
 }
 
+///|
 /// Get SVG stroke-dasharray attribute string for the given line style.
 fn lineDashAttr(style : LineStyle) -> String {
   match style {

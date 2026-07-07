@@ -1,5 +1,6 @@
 // Legend rendering: draws colored markers and series names.
 
+///|
 /// Render the chart legend.
 pub fn renderLegend(layout : Layout, opt : ChartOption) -> String {
   if !opt.legend {
@@ -22,8 +23,8 @@ pub fn renderLegend(layout : Layout, opt : ChartOption) -> String {
   // Scale all sizes proportionally to font size
   let fs = font.size
   let markerSize = fs * 0.9
-  let markerGap = fs * 0.4       // gap between marker and text
-  let itemSpacing = fs * 1.5     // vertical gap between rows
+  let markerGap = fs * 0.4 // gap between marker and text
+  let itemSpacing = fs * 1.5 // vertical gap between rows
   let paddingX = fs * 0.8
   let paddingY = fs * 0.4
 
@@ -49,17 +50,24 @@ pub fn renderLegend(layout : Layout, opt : ChartOption) -> String {
     TopCenter => (plot.centerX() - totalW / 2.0, plot.top() + 8.0)
     BottomRight => (plot.right() - totalW - 8.0, plot.bottom() - totalH - 8.0)
     BottomLeft => (plot.left() + 8.0, plot.bottom() - totalH - 8.0)
-    BottomCenter => (plot.centerX() - totalW / 2.0, plot.bottom() - totalH - 8.0)
+    BottomCenter =>
+      (plot.centerX() - totalW / 2.0, plot.bottom() - totalH - 8.0)
     Left => (plot.left() + 8.0, plot.centerY() - totalH / 2.0)
     Right => (plot.right() - totalW - 8.0, plot.centerY() - totalH / 2.0)
   }
 
   // Legend background
-  svg = svg + rect(
-    x= lx, y= ly,
-    w= totalW, h= totalH,
-    fill= "white", stroke= "#ccc", strokeWidth= 1.0,
-  ) + "\n"
+  svg = svg +
+    rect(
+      x=lx,
+      y=ly,
+      w=totalW,
+      h=totalH,
+      fill="white",
+      stroke="#ccc",
+      strokeWidth=1.0,
+    ) +
+    "\n"
 
   // Legend items — each row: [marker] [text], vertically centered
   for i = 0; i < opt.series.length(); i = i + 1 {
@@ -70,7 +78,10 @@ pub fn renderLegend(layout : Layout, opt : ChartOption) -> String {
     }
 
     // Center Y of this entire row
-    let rowCenterY = ly + paddingY + i.to_double() * itemSpacing + itemSpacing / 2.0
+    let rowCenterY = ly +
+      paddingY +
+      i.to_double() * itemSpacing +
+      itemSpacing / 2.0
 
     // Marker position (vertically centered in row)
     let markerX = lx + paddingX
@@ -78,44 +89,66 @@ pub fn renderLegend(layout : Layout, opt : ChartOption) -> String {
     let markerTop = markerCY - markerSize / 2.0
 
     match series.chartType {
-      Bar => {
-        svg = svg + rect(
-          x= markerX, y= markerTop,
-          w= markerSize, h= markerSize,
-          fill= color.toSvg(), stroke= "none", strokeWidth= 0.0,
-        ) + "\n"
-      }
-      Line => {
-        svg = svg + line(
-          x1= markerX, y1= markerCY,
-          x2= markerX + markerSize, y2= markerCY,
-          stroke= color.toSvg(), strokeWidth= 2.0,
-        ) + "\n"
-      }
-      Scatter => {
-        svg = svg + circle(
-          cx= markerX + markerSize / 2.0, cy= markerCY,
-          r= markerSize / 2.0,
-          fill= color.toSvg(), stroke= "none", strokeWidth= 0.0,
-        ) + "\n"
-      }
-      BoxPlot => {
-        svg = svg + rect(
-          x= markerX, y= markerTop,
-          w= markerSize, h= markerSize,
-          fill= color.toSvg(), stroke= "none", strokeWidth= 0.0,
-        ) + "\n"
-      }
+      Bar =>
+        svg = svg +
+          rect(
+            x=markerX,
+            y=markerTop,
+            w=markerSize,
+            h=markerSize,
+            fill=color.toSvg(),
+            stroke="none",
+            strokeWidth=0.0,
+          ) +
+          "\n"
+      Line =>
+        svg = svg +
+          line(
+            x1=markerX,
+            y1=markerCY,
+            x2=markerX + markerSize,
+            y2=markerCY,
+            stroke=color.toSvg(),
+            strokeWidth=2.0,
+          ) +
+          "\n"
+      Scatter =>
+        svg = svg +
+          circle(
+            cx=markerX + markerSize / 2.0,
+            cy=markerCY,
+            r=markerSize / 2.0,
+            fill=color.toSvg(),
+            stroke="none",
+            strokeWidth=0.0,
+          ) +
+          "\n"
+      BoxPlot =>
+        svg = svg +
+          rect(
+            x=markerX,
+            y=markerTop,
+            w=markerSize,
+            h=markerSize,
+            fill=color.toSvg(),
+            stroke="none",
+            strokeWidth=0.0,
+          ) +
+          "\n"
     }
 
     // Text label (vertically centered: baseline = rowCenterY + fs * 0.35)
     let labelX = markerX + markerSize + markerGap
     let textBaseline = rowCenterY + fs * 0.35
-    svg = svg + text(
-      x= labelX, y= textBaseline,
-      content= series.name, font= font,
-      textAnchor= "start",
-    ) + "\n"
+    svg = svg +
+      text(
+        x=labelX,
+        y=textBaseline,
+        content=series.name,
+        font~,
+        textAnchor="start",
+      ) +
+      "\n"
   }
 
   svg

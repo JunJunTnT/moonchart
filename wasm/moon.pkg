@@ -1,0 +1,14 @@
+import {
+  "JunJunTnT/moonchart",
+  "moonbitlang/x/json5",
+}
+
+options(
+  link: {
+    "wasm-gc": {
+      "exports": [ "render_chart" ],
+      "use-js-builtin-string": true,
+      "imported-string-constants": "_",
+    },
+  },
+)

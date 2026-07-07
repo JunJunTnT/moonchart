@@ -1,5 +1,7 @@
 // Example: Mixed chart combining bar and line series on shared x-axis.
 // Run: moon run examples/mixed_chart
+
+///|
 fn main {
   let barData = [
     @moonchart.DataPoint::withErrY(0.0, 35.0, 4.0),
@@ -23,14 +25,15 @@ fn main {
     .yGrid(true)
     .barWidthRatio(0.25)
     .series(
-      @moonchart.Series::bar("mRNA Level", barData)
-      .withColor(@moonchart.Color::rgb(93, 215, 255))
+      @moonchart.Series::bar("mRNA Level", barData).withColor(
+        @moonchart.Color::rgb(93, 215, 255),
+      ),
     )
     .series(
       @moonchart.Series::line("Expected Trend", trendData)
-        .withColor(@moonchart.Color::rgb(212, 57, 57))
-        .withPointSize(8.0)
-        .withPointShape(@moonchart.Diamond)
+      .withColor(@moonchart.Color::rgb(212, 57, 57))
+      .withPointSize(8.0)
+      .withPointShape(@moonchart.Diamond),
     )
     .save("mixed_chart.svg")
 

@@ -1,5 +1,7 @@
 // Example: Scatter plot with custom point shapes and auto-inferred x-axis ticks.
 // Run: moon run examples/scatter_chart
+
+///|
 fn main {
   let groupA = [
     @moonchart.DataPoint::new(1.2, 2.1),
@@ -30,15 +32,15 @@ fn main {
     .yRange(0.0, 20.0)
     .series(
       @moonchart.Series::scatter("Group A", groupA)
-        .withColor(@moonchart.Color::rgb(0, 122, 184))
-        .withPointShape(@moonchart.Circle)
-        .withPointSize(5.0)
+      .withColor(@moonchart.Color::rgb(0, 122, 184))
+      .withPointShape(@moonchart.Circle)
+      .withPointSize(5.0),
     )
     .series(
       @moonchart.Series::scatter("Group B", groupB)
-        .withColor(@moonchart.Color::rgb(212, 57, 57))
-        .withPointShape(@moonchart.Triangle)
-        .withPointSize(5.0)
+      .withColor(@moonchart.Color::rgb(212, 57, 57))
+      .withPointShape(@moonchart.Triangle)
+      .withPointSize(5.0),
     )
     .legend(true, @moonchart.TopLeft)
     // .size(500.0, 400.0)
