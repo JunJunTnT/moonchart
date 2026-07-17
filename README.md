@@ -47,17 +47,17 @@ A minimal bar chart with error bars:
 ```moonbit
 fn main {
   let data = [
-    DataPoint::withErrY(0.0, 45.0, 3.0),
-    DataPoint::withErrY(1.0, 62.0, 2.5),
+    @moonchart.DataPoint::withErrY(0.0, 45.0, 3.0),
+    @moonchart.DataPoint::withErrY(1.0, 62.0, 2.5),
   ]
 
-  let result = Chart::new()
+  let result = @moonchart.Chart::new()
     .title("Cell Viability")
     .xTicks([0.0, 1.0], ["Control", "Treated"])
     .xLabel("Condition")
     .yLabel("Viability (%)")
     .yRange(0.0, 100.0)
-    .series(Series::bar("24h", data))
+    .series(@moonchart.Series::bar("24h", data))
     .toSvg()
 
   match result {
@@ -75,13 +75,13 @@ Rectangular bars with optional error bars, grouped or stacked positioning, and b
 
 ```moonbit
 let data = [
-  DataPoint::withErrY(0.0, 45.0, 3.0),
-  DataPoint::withErrY(1.0, 62.0, 2.5),
+  @moonchart.DataPoint::withErrY(0.0, 45.0, 3.0),
+  @moonchart.DataPoint::withErrY(1.0, 62.0, 2.5),
 ]
 
-Series::bar("Group A", data)
-  .withColor(Color::rgb(0, 122, 184))
-  .withBarStroke(Color::rgb(0, 80, 140), 1.0)
+@moonchart.Series::bar("Group A", data)
+  .withColor(@moonchart.Color::rgb(0, 122, 184))
+  .withBarStroke(@moonchart.Color::rgb(0, 80, 140), 1.0)
 ```
 
 ### Line Chart
@@ -90,16 +90,16 @@ Connected points with configurable dash styles, point shapes, and point fill col
 
 ```moonbit
 let data = [
-  DataPoint::new(0.0, 100.0),
-  DataPoint::new(1.0, 85.0),
-  DataPoint::new(2.0, 72.0),
+  @moonchart.DataPoint::new(0.0, 100.0),
+  @moonchart.DataPoint::new(1.0, 85.0),
+  @moonchart.DataPoint::new(2.0, 72.0),
 ]
 
-Series::line("Trend", data)
-  .withColor(Color::rgb(212, 57, 57))
+@moonchart.Series::line("Trend", data)
+  .withColor(@moonchart.Color::rgb(212, 57, 57))
   .withPointSize(5.0)
-  .withPointShape(Diamond)
-  .withLineStyle(Dashed)
+  .withPointShape(@moonchart.Diamond)
+  .withLineStyle(@moonchart.Dashed)
 ```
 
 ### Scatter Plot
@@ -108,16 +108,16 @@ Unconnected points with customizable shape, size, and fill color.
 
 ```moonbit
 let data = [
-  DataPoint::new(1.2, 2.1),
-  DataPoint::new(2.3, 3.8),
-  DataPoint::new(3.1, 5.2),
+  @moonchart.DataPoint::new(1.2, 2.1),
+  @moonchart.DataPoint::new(2.3, 3.8),
+  @moonchart.DataPoint::new(3.1, 5.2),
 ]
 
-Series::scatter("Group X", data)
-  .withColor(Color::rgb(0, 122, 184))
+@moonchart.Series::scatter("Group X", data)
+  .withColor(@moonchart.Color::rgb(0, 122, 184))
   .withPointSize(5.0)
-  .withPointShape(Circle)
-  .withPointFill(Color::rgb(255, 0, 0))
+  .withPointShape(@moonchart.Circle)
+  .withPointFill(@moonchart.Color::rgb(255, 0, 0))
 ```
 
 ### Box Plot
@@ -126,12 +126,12 @@ Box-and-whisker plot with Q1/Q3 box, median line, whiskers to the furthest point
 
 ```moonbit
 let groups = [
-  BoxGroup::new(0.0, "Control", [1.2, 2.1, 3.4, 2.8, 1.9, 2.5, 3.0, 2.3]),
-  BoxGroup::new(1.0, "Treated", [0.8, 1.5, 2.9, 2.1, 1.3, 1.9, 2.4, 1.7]),
+  @moonchart.BoxGroup::new(0.0, "Control", [1.2, 2.1, 3.4, 2.8, 1.9, 2.5, 3.0, 2.3]),
+  @moonchart.BoxGroup::new(1.0, "Treated", [0.8, 1.5, 2.9, 2.1, 1.3, 1.9, 2.4, 1.7]),
 ]
 
-Series::boxplot("Expression", groups)
-  .withColor(Color::rgb(0, 122, 184))
+@moonchart.Series::boxplot("Expression", groups)
+  .withColor(@moonchart.Color::rgb(0, 122, 184))
   .withShowOutliers(true)
 ```
 
@@ -140,9 +140,9 @@ Series::boxplot("Expression", groups)
 Series of different types can be combined in a single chart:
 
 ```moonbit
-Chart::new()
-  .series(Series::bar("Experiment", barData))
-  .series(Series::line("Trend", trendData).withLineStyle(Dashed))
+@moonchart.Chart::new()
+  .series(@moonchart.Series::bar("Experiment", barData))
+  .series(@moonchart.Series::line("Trend", trendData).withLineStyle(@moonchart.Dashed))
 ```
 
 ## Feature Matrix

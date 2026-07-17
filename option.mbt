@@ -134,7 +134,7 @@ pub(all) enum ErrorValue {
 pub fn ErrorValue::lo(self : ErrorValue) -> Double {
   match self {
     Symmetric(v) => -v
-    Asymmetric(lo, _) => lo
+    Asymmetric(lo, _) => -lo
   }
 }
 

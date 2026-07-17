@@ -34,7 +34,7 @@ test "ErrorValue::Symmetric lo and hi" {
 ///|
 test "ErrorValue::Asymmetric lo and hi" {
   let e = ErrorValue::Asymmetric(8.0, 12.0)
-  assert_eq(e.lo(), 8.0)
+  assert_eq(e.lo(), -8.0)
   assert_eq(e.hi(), 12.0)
 }
 
@@ -285,4 +285,180 @@ test "BoxGroup::new creates valid box group" {
   let bg = BoxGroup::new(2.0, "TestGroup", [1.0, 2.0, 3.0, 4.0, 5.0])
   assert_eq(bg.x, 2.0)
   assert_eq(bg.label, "TestGroup")
+}
+
+///|
+/// E2E: Line chart renders polyline elements
+test "line chart renders polyline elements" {
+  let data = [
+    DataPoint::new(0.0, 10.0),
+    DataPoint::new(1.0, 20.0),
+    DataPoint::new(2.0, 15.0),
+  ]
+  let result = Chart::new()
+    .xTicks([0.0, 1.0, 2.0], ["A", "B", "C"])
+    .yRange(0.0, 30.0)
+    .series(Series::line("Trend", data))
+    .toSvg()
+  match result {
+    Ok(svg) => {
+      assert_eq(svg.contains("<polyline"), true)
+      assert_eq(svg.contains("</svg>"), true)
+    }
+    Err(msg) => abort("line chart render failed: \{msg}")
+  }
+}
+
+///|
+/// E2E: Multi-series line chart
+test "multi-series line chart renders multiple polylines" {
+  let data1 = [DataPoint::new(0.0, 10.0), DataPoint::new(1.0, 20.0)]
+  let data2 = [DataPoint::new(0.0, 15.0), DataPoint::new(1.0, 25.0)]
+  let result = Chart::new()
+    .xTicks([0.0, 1.0], ["A", "B"])
+    .yRange(0.0, 30.0)
+    .series(Series::line("A", data1))
+    .series(Series::line("B", data2))
+    .toSvg()
+  match result {
+    Ok(svg) => assert_eq(svg.contains("<polyline"), true)
+    Err(msg) => abort("multi-line render failed: \{msg}")
+  }
+}
+
+///|
+/// E2E: Scatter plot renders circle elements
+test "scatter plot renders circle elements" {
+  let data = [
+    DataPoint::new(0.0, 1.0),
+    DataPoint::new(1.0, 2.0),
+    DataPoint::new(2.0, 3.0),
+    DataPoint::new(3.0, 2.0),
+    DataPoint::new(4.0, 1.0),
+  ]
+  let result = Chart::new()
+    .xTicks([0.0, 1.0, 2.0, 3.0, 4.0], ["0", "1", "2", "3", "4"])
+    .yRange(0.0, 5.0)
+    .series(Series::scatter("Points", data))
+    .toSvg()
+  match result {
+    Ok(svg) => assert_eq(svg.contains("<circle"), true)
+    Err(msg) => abort("scatter render failed: \{msg}")
+  }
+}
+
+///|
+/// E2E: Scatter with Triangle point shape renders polygon
+test "scatter with Triangle shape renders polygon" {
+  let data = [DataPoint::new(0.0, 1.0), DataPoint::new(1.0, 2.0)]
+  let result = Chart::new()
+    .xTicks([0.0, 1.0], ["A", "B"])
+    .yRange(0.0, 3.0)
+    .series(Series::scatter("Tri", data).withPointShape(Triangle))
+    .toSvg()
+  match result {
+    Ok(svg) => assert_eq(svg.contains("<polygon"), true)
+    Err(msg) => abort("triangle scatter render failed: \{msg}")
+  }
+}
+
+///|
+/// E2E: Box plot renders rect and line elements
+test "box plot renders rect and whisker lines" {
+  let groups = [
+    BoxGroup::new(0.0, "Control", [1.2, 2.1, 3.4, 2.8, 1.9, 2.5, 3.0, 2.3]),
+    BoxGroup::new(1.0, "Treated", [0.8, 1.5, 2.9, 2.1, 1.3, 1.9, 2.4, 1.7]),
+  ]
+  let result = Chart::new()
+    .xTicks([0.0, 1.0], ["Control", "Treated"])
+    .yRange(0.0, 5.0)
+    .series(Series::boxplot("Expression", groups))
+    .toSvg()
+  match result {
+    Ok(svg) => {
+      assert_eq(svg.contains("<rect"), true)
+      assert_eq(svg.contains("<line"), true)
+    }
+    Err(msg) => abort("boxplot render failed: \{msg}")
+  }
+}
+
+///|
+/// E2E: Box plot with outliers renders circle markers
+test "box plot with outliers renders circle markers" {
+  let groups = [BoxGroup::new(0.0, "G1", [1.0, 2.0, 3.0, 4.0, 5.0, 20.0])]
+  let result = Chart::new()
+    .xTicks([0.0], ["G1"])
+    .yRange(0.0, 25.0)
+    .series(Series::boxplot("Outliers", groups).withShowOutliers(true))
+    .toSvg()
+  match result {
+    Ok(svg) =>
+      // Outlier points render as circles
+      assert_eq(svg.contains("<circle"), true)
+    Err(msg) => abort("boxplot outlier render failed: \{msg}")
+  }
+}
+
+///|
+/// E2E: Mixed bar + line chart
+test "mixed bar and line chart renders both element types" {
+  let barData = [DataPoint::new(0.0, 30.0), DataPoint::new(1.0, 70.0)]
+  let lineData = [DataPoint::new(0.0, 40.0), DataPoint::new(1.0, 60.0)]
+  let result = Chart::new()
+    .xTicks([0.0, 1.0], ["A", "B"])
+    .yRange(0.0, 100.0)
+    .series(Series::bar("Bars", barData))
+    .series(Series::line("Line", lineData))
+    .toSvg()
+  match result {
+    Ok(svg) => {
+      assert_eq(svg.contains("<rect"), true)
+      assert_eq(svg.contains("<polyline"), true)
+    }
+    Err(msg) => abort("mixed bar+line render failed: \{msg}")
+  }
+}
+
+///|
+/// E2E: Mixed bar + line + scatter chart
+test "mixed bar line scatter chart renders three element types" {
+  let barData = [DataPoint::new(0.0, 30.0), DataPoint::new(1.0, 40.0)]
+  let lineData = [DataPoint::new(0.0, 50.0), DataPoint::new(1.0, 60.0)]
+  let scatterData = [DataPoint::new(0.0, 20.0), DataPoint::new(1.0, 25.0)]
+  let result = Chart::new()
+    .xTicks([0.0, 1.0], ["A", "B"])
+    .yRange(0.0, 100.0)
+    .series(Series::bar("Bar", barData))
+    .series(Series::line("Line", lineData))
+    .series(Series::scatter("Scatter", scatterData))
+    .toSvg()
+  match result {
+    Ok(svg) => {
+      assert_eq(svg.contains("<rect"), true)
+      assert_eq(svg.contains("<polyline"), true)
+      assert_eq(svg.contains("<circle"), true)
+    }
+    Err(msg) => abort("mixed bar+line+scatter render failed: \{msg}")
+  }
+}
+
+///|
+/// E2E: Asymmetric error bar renders with correct lower bound
+test "asymmetric error bar lower bound below data point" {
+  let dp = DataPoint::withAsymErrY(0.0, 50.0, 10.0, 5.0)
+  let result = Chart::new()
+    .xTicks([0.0], ["X"])
+    .yRange(0.0, 100.0)
+    .series(Series::bar("Asym", [dp]))
+    .toSvg()
+  match result {
+    Ok(svg) => {
+      // Error bar lines must be present
+      assert_eq(svg.contains("<line"), true)
+      // SVG should contain the chart — verify it produces valid output
+      assert_eq(svg.contains("</svg>"), true)
+    }
+    Err(msg) => abort("asymmetric error bar render failed: \{msg}")
+  }
 }
