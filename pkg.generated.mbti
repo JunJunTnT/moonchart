@@ -1,0 +1,363 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "JunJunTnT/moonchart"
+
+// Values
+pub const DEFAULT_ERROR_CAP_WIDTH : Double = 6.0
+
+pub const DEFAULT_ERROR_LINE_WIDTH : Double = 1.0
+
+pub const DEFAULT_HEIGHT : Double = 400.0
+
+pub const DEFAULT_LINE_WIDTH : Double = 2.0
+
+pub const DEFAULT_POINT_SIZE : Double = 4.0
+
+pub const DEFAULT_WIDTH : Double = 600.0
+
+pub fn axisColor() -> Color
+
+pub fn axisTitleFont() -> Font
+
+pub fn backgroundColor() -> Color
+
+pub fn circle(cx~ : Double, cy~ : Double, r~ : Double, fill~ : String, stroke~ : String, strokeWidth~ : Double) -> String
+
+pub fn computeBoxStats(Array[Double]) -> BoxStats
+
+pub fn computeLayout(ChartOption) -> Result[Layout, String]
+
+pub fn formatPoints(Array[(Double, Double)]) -> String
+
+pub fn legendFont() -> Font
+
+pub fn line(x1~ : Double, y1~ : Double, x2~ : Double, y2~ : Double, stroke~ : String, strokeWidth~ : Double) -> String
+
+pub fn palette(Int) -> Color
+
+pub fn polyline(points~ : String, stroke~ : String, strokeWidth~ : Double, fill~ : String) -> String
+
+pub fn rect(x~ : Double, y~ : Double, w~ : Double, h~ : Double, fill~ : String, stroke~ : String, strokeWidth~ : Double) -> String
+
+pub fn render(ChartOption) -> Result[String, String]
+
+pub fn renderBars(Layout, ChartOption, Int) -> String
+
+pub fn renderBoxplot(Layout, ChartOption, Int) -> String
+
+pub fn renderErrorBars(Layout, ChartOption, Int) -> String
+
+pub fn renderLegend(Layout, ChartOption) -> String
+
+pub fn renderLine(Layout, ChartOption, Int) -> String
+
+pub fn renderScatter(Layout, ChartOption, Int) -> String
+
+pub fn renderTitle(ChartOption) -> String
+
+pub fn renderXAxis(Layout, ChartOption) -> String
+
+pub fn renderYAxis(Layout, ChartOption) -> String
+
+pub fn rotatedText(x~ : Double, y~ : Double, content~ : String, font~ : Font) -> String
+
+pub fn saveSvg(String, String) -> Result[Unit, String]
+
+pub fn seriesColor(Int) -> Color
+
+pub fn svgClose() -> String
+
+pub fn svgOpen(width~ : Double, height~ : Double, bg~ : String) -> String
+
+pub fn text(x~ : Double, y~ : Double, content~ : String, font~ : Font, textAnchor~ : String) -> String
+
+pub fn tickFont() -> Font
+
+pub fn titleFont() -> Font
+
+pub fn xmlEscape(String) -> String
+
+// Errors
+
+// Types and methods
+pub enum AxisKind {
+  Linear(Double, Double)
+}
+
+pub struct AxisOption {
+  kind : AxisKind
+  label : String?
+  tickPositions : Array[Double]
+  tickLabels : Array[String]
+  showTick : Bool
+  tickCount : Int?
+  gridLine : Bool
+  tickFontSize : Double
+  labelFontSize : Double
+  tickColor : Color
+  gridColor : Color
+  gridWidth : Double
+}
+pub fn AxisOption::defaultX() -> Self
+pub fn AxisOption::linearY() -> Self
+pub fn AxisOption::withLabel(Self, String) -> Self
+
+pub(all) struct BoxGroup {
+  x : Double
+  label : String
+  values : Array[Double]
+}
+pub fn BoxGroup::new(Double, String, Array[Double]) -> Self
+
+pub(all) struct BoxStats {
+  min : Double
+  q1 : Double
+  median : Double
+  q3 : Double
+  max : Double
+  iqr : Double
+  lowerFence : Double
+  upperFence : Double
+  whiskerLow : Double
+  whiskerHigh : Double
+  outliers : Array[Double]
+}
+
+pub struct CategoryScale {
+  tickPositions : Array[Double]
+  tickLabels : Array[String]
+  plotPixels : Double
+  bandWidth : Double
+  dataMin : Double
+  dataMax : Double
+}
+pub fn CategoryScale::bandCenter(Self, Double) -> Double
+pub fn CategoryScale::count(Self) -> Int
+pub fn CategoryScale::dataRange(Self) -> (Double, Double)
+pub fn CategoryScale::getBandWidth(Self) -> Double
+pub fn CategoryScale::label(Self, Int) -> String
+pub fn CategoryScale::map(Self, Double) -> Double
+pub fn CategoryScale::new(Array[Double], Array[String], Double) -> Self
+pub fn CategoryScale::plotSize(Self) -> Double
+pub fn CategoryScale::position(Self, Int) -> Double
+pub fn CategoryScale::ticks(Self, Int) -> Array[(Double, String)]
+pub fn CategoryScale::unmap(Self, Double) -> Double
+
+pub struct Chart {
+  option : ChartOption
+}
+pub fn Chart::addSeries(Self, Array[Series]) -> Self
+pub fn Chart::background(Self, Color) -> Self
+pub fn Chart::bar() -> Self
+pub fn Chart::barGap(Self, Double) -> Self
+pub fn Chart::barWidthRatio(Self, Double) -> Self
+pub fn Chart::fontFamily(Self, String) -> Self
+pub fn Chart::height(Self, Double) -> Self
+pub fn Chart::labelFontSize(Self, Double) -> Self
+pub fn Chart::legend(Self, Bool, Position) -> Self
+pub fn Chart::legendFontSize(Self, Double) -> Self
+pub fn Chart::line() -> Self
+pub fn Chart::margin(Self, Double, Double, Double, Double) -> Self
+pub fn Chart::new() -> Self
+pub fn Chart::save(Self, String) -> Result[Unit, String]
+pub fn Chart::scatter() -> Self
+pub fn Chart::series(Self, Series) -> Self
+pub fn Chart::size(Self, Double, Double) -> Self
+pub fn Chart::tickFontSize(Self, Double) -> Self
+pub fn Chart::title(Self, String) -> Self
+pub fn Chart::toOption(Self) -> ChartOption
+pub fn Chart::toSvg(Self) -> Result[String, String]
+pub fn Chart::width(Self, Double) -> Self
+pub fn Chart::xGrid(Self, Bool) -> Self
+pub fn Chart::xLabel(Self, String) -> Self
+pub fn Chart::xTicks(Self, Array[Double], Array[String]) -> Self
+pub fn Chart::yGrid(Self, Bool) -> Self
+pub fn Chart::yLabel(Self, String) -> Self
+pub fn Chart::yRange(Self, Double, Double) -> Self
+
+pub struct ChartOption {
+  width : Double
+  height : Double
+  margin : Margin
+  background : Color
+  title : String?
+  titleFont : Font
+  xAxis : AxisOption
+  yAxis : AxisOption
+  series : Array[Series]
+  legend : Bool
+  legendPosition : Position
+  legendFontSize : Double
+  barWidthRatio : Double
+  barGap : Double
+  fontFamily : String
+}
+pub fn ChartOption::new(AxisOption, AxisOption, Array[Series]) -> Self
+
+pub enum ChartType {
+  Bar
+  Line
+  Scatter
+  BoxPlot
+}
+
+pub(all) struct Color {
+  r : Int
+  g : Int
+  b : Int
+  a : Int
+}
+pub fn Color::rgb(Int, Int, Int) -> Self
+pub fn Color::rgba(Int, Int, Int, Int) -> Self
+pub fn Color::toHex(Self) -> String
+pub fn Color::toSvg(Self) -> String
+
+pub struct DataPoint {
+  x : Double
+  y : Double
+  error_y : ErrorValue?
+  error_x : ErrorValue?
+  label : String?
+}
+pub fn DataPoint::new(Double, Double) -> Self
+pub fn DataPoint::withAsymErrY(Double, Double, Double, Double) -> Self
+pub fn DataPoint::withErrY(Double, Double, Double) -> Self
+
+pub(all) enum ErrorValue {
+  Symmetric(Double)
+  Asymmetric(Double, Double)
+}
+pub fn ErrorValue::hi(Self) -> Double
+pub fn ErrorValue::lo(Self) -> Double
+
+pub struct Font {
+  family : String
+  size : Double
+  color : Color
+  bold : Bool
+  italic : Bool
+}
+pub fn Font::default() -> Self
+pub fn Font::svgAttrs(Self) -> String
+pub fn Font::title() -> Self
+
+pub struct Layout {
+  canvas : Rect
+  plot : Rect
+  xScale : CategoryScale
+  yScale : LinearScale
+  dodgeOffsets : Array[Double]
+  barWidth : Double
+}
+
+pub(all) enum LineStyle {
+  Solid
+  Dashed
+  Dotted
+  DashDot
+}
+
+pub struct LinearScale {
+  min : Double
+  max : Double
+  plotPixels : Double
+}
+pub fn LinearScale::map(Self, Double) -> Double
+pub fn LinearScale::new(Double, Double, Double) -> Self
+pub fn LinearScale::plotSize(Self) -> Double
+pub fn LinearScale::ticks(Self, Int) -> Array[(Double, String)]
+pub fn LinearScale::unmap(Self, Double) -> Double
+
+pub struct LogScale {
+  base : Double
+  min : Double
+  max : Double
+  plotPixels : Double
+}
+pub fn LogScale::map(Self, Double) -> Double
+pub fn LogScale::new(Double, Double, Double, Double) -> Self
+pub fn LogScale::plotSize(Self) -> Double
+pub fn LogScale::ticks(Self, Int) -> Array[(Double, String)]
+
+pub(all) struct Margin {
+  top : Double
+  right : Double
+  bottom : Double
+  left : Double
+}
+pub fn Margin::default() -> Self
+
+pub(all) enum PointShape {
+  Circle
+  Square
+  Triangle
+  Diamond
+  Cross
+}
+
+pub(all) enum Position {
+  TopLeft
+  TopCenter
+  TopRight
+  BottomLeft
+  BottomCenter
+  BottomRight
+  Left
+  Right
+}
+
+pub struct Rect {
+  x : Double
+  y : Double
+  w : Double
+  h : Double
+}
+pub fn Rect::bottom(Self) -> Double
+pub fn Rect::centerX(Self) -> Double
+pub fn Rect::centerY(Self) -> Double
+pub fn Rect::left(Self) -> Double
+pub fn Rect::right(Self) -> Double
+pub fn Rect::top(Self) -> Double
+
+pub struct Series {
+  name : String
+  chartType : ChartType
+  data : Array[DataPoint]
+  color : Color?
+  lineWidth : Double
+  pointSize : Double
+  pointShape : PointShape
+  lineStyle : LineStyle
+  pointFill : Color?
+  barStroke : Color?
+  barStrokeWidth : Double
+  errorColor : Color?
+  errorLineWidth : Double
+  errorCapWidth : Double
+  boxGroups : Array[BoxGroup]
+  showOutliers : Bool
+}
+pub fn Series::bar(String, Array[DataPoint]) -> Self
+pub fn Series::boxplot(String, Array[BoxGroup]) -> Self
+pub fn Series::line(String, Array[DataPoint]) -> Self
+pub fn Series::scatter(String, Array[DataPoint]) -> Self
+pub fn Series::withBarStroke(Self, Color, Double) -> Self
+pub fn Series::withColor(Self, Color) -> Self
+pub fn Series::withErrorCapWidth(Self, Double) -> Self
+pub fn Series::withErrorColor(Self, Color?) -> Self
+pub fn Series::withErrorLineWidth(Self, Double) -> Self
+pub fn Series::withLineStyle(Self, LineStyle) -> Self
+pub fn Series::withLineWidth(Self, Double) -> Self
+pub fn Series::withPointFill(Self, Color) -> Self
+pub fn Series::withPointShape(Self, PointShape) -> Self
+pub fn Series::withPointSize(Self, Double) -> Self
+pub fn Series::withShowOutliers(Self, Bool) -> Self
+
+// Type aliases
+
+// Traits
+pub trait Scale {
+  fn map(Self, Double) -> Double
+  fn ticks(Self, Int) -> Array[(Double, String)]
+  fn plotSize(Self) -> Double
+}
+
