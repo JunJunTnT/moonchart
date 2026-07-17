@@ -45,4 +45,4 @@ fn main {
     Ok(_) => println("Saved to boxplot.svg")
     Err(msg) => println("Error: \{msg}")
   }
-}
+}  
