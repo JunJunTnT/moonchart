@@ -1,7 +1,3 @@
 import {
   "JunJunTnT/moonchart",
 }
-
-options(
-  "is-main": true,
-)
