@@ -25,4 +25,5 @@ description = "A statistical chart SVG generation library for MoonBit. Supports 
 
 import {
   "moonbitlang/x@0.4.44",
+  "JunJunTnT/moonchart@0.1.1",
 }
